@@ -142,3 +142,35 @@ Search the codebase for `PLACEHOLDER`. Four things need real values:
 4. **Social links** — all currently point at the homepage
 
 Also confirm `hello@oxohive.com` exists.
+
+---
+
+## Deploying to Vercel
+
+The repo is deploy-ready as-is — no `vercel.json` needed, Vercel detects
+Next.js automatically.
+
+1. **Import** — vercel.com/new → pick `sheikxm05/oxohive`
+2. **Settings** — leave everything at the defaults:
+   - Framework: Next.js (auto-detected)
+   - Build: `npm run build` · Output: `.next` · Install: `npm install`
+   - Node: 20.x or later (pinned via `engines` in `package.json`)
+3. **Environment variables** — none required
+4. **Deploy**
+
+### Custom domain
+
+After the first deploy: Project → Settings → Domains → add `oxohive.com`.
+Vercel will give you either an `A` record (`76.76.21.21`) or a `CNAME`. Add it
+at your registrar (the domain is on Porkbun), or hand Porkbun's nameservers
+over to Vercel entirely. SSL is issued automatically.
+
+If the production URL ever changes, update `site.url` in `lib/content.ts` —
+it feeds `metadataBase`, the canonical tag, `robots.txt` and `sitemap.xml`.
+
+### Verified locally
+
+```
+npm run build   ✓  4 routes, all static
+npm run start   ✓  / · /robots.txt · /sitemap.xml · /hdri/*  all 200
+```
