@@ -13,7 +13,10 @@ $RepoDir    = "C:\dev\google-flow-browser-mcp"
 $EntryPoint = "$RepoDir\src\index.js"
 $ChromeExe  = "C:\Program Files\Google\Chrome\Application\chrome.exe"
 $ChromeData = "$env:LOCALAPPDATA\Google\Chrome\User Data"
-$ClaudeExe  = "C:\Users\sheik\.vscode\extensions\anthropic.claude-code-2.1.235-win32-x64\resources\native-binary\claude.exe"
+# discovered at runtime - the VS Code extension auto-updates, so never pin a version
+$ClaudeExe  = Get-ChildItem "$env:USERPROFILE\.vscode\extensions" -Directory -Filter "anthropic.claude-code-*" -ErrorAction SilentlyContinue |
+    Sort-Object Name -Descending | Select-Object -First 1 |
+    ForEach-Object { Join-Path $_.FullName "resources\native-binary\claude.exe" }
 
 function Step($n, $msg) { Write-Host "`n[$n] $msg" -ForegroundColor Cyan }
 function Ok($msg)       { Write-Host "    $msg" -ForegroundColor Green }
@@ -59,8 +62,16 @@ Get-ChildItem $ChromeData -Directory |
     }
 
 Write-Host ""
-$profileName = Read-Host "Profile folder name from the list above"
-$account     = Read-Host "Gmail address on that profile"
+Write-Host "Enter the LEFT column value (e.g. 'Profile 1'), NOT the email." -ForegroundColor Yellow
+do {
+    $profileName = (Read-Host "Profile folder name").Trim()
+    if (-not $profileName -or -not (Test-Path (Join-Path $ChromeData $profileName))) {
+        Write-Host "  not a real profile folder - try again" -ForegroundColor Red
+        $profileName = ""
+    }
+} while (-not $profileName)
+
+do { $account = (Read-Host "Gmail address on that profile").Trim() } while (-not $account)
 
 # ---------------------------------------------------------------------------
 Step 3 "Writing config\flow.config.json from the repo example"
@@ -80,8 +91,14 @@ Ok "config written (all keys from the example preserved)"
 # ---------------------------------------------------------------------------
 Step 4 "Registering the MCP server with Claude Code"
 # ---------------------------------------------------------------------------
-& $ClaudeExe mcp remove google-flow --scope user 2>$null | Out-Null
-& $ClaudeExe mcp add google-flow --scope user -- node $EntryPoint
+if (-not $ClaudeExe -or -not (Test-Path $ClaudeExe)) {
+    Write-Host "    claude.exe not found - register manually:" -ForegroundColor Red
+    Write-Host "    claude mcp add google-flow --scope user -- node `"$EntryPoint`"" -ForegroundColor White
+} else {
+    Ok "using $ClaudeExe"
+    & $ClaudeExe mcp remove google-flow --scope user 2>$null | Out-Null
+    & $ClaudeExe mcp add google-flow --scope user -- node $EntryPoint
+}
 
 # ---------------------------------------------------------------------------
 Write-Host "`n=============================================================" -ForegroundColor Yellow
