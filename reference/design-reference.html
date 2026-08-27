@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oxohive — Web, Mobile, ERP &amp; SEO</title>
+<meta name="description" content="Oxohive builds scalable web platforms, mobile apps, CRM and ERP systems, and runs a structured internship programme. Book a call and get a quote in minutes.">
+<link rel="canonical" href="https://oxohive.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+/* ============================================================
+   OXOHIVE — tokens
+   Light  = the cafe by day   (cream room, black screen)
+   Dark   = the cafe at night (espresso room, same black screen)
+   The screen tokens never change. That is the whole idea.
+   ============================================================ */
+:root{
+  --ground:#F3EBDF;
+  --ground-2:#EAE0D1;
+  --ground-3:#E2D5C2;
+  --ink:#1D1814;
+  --ink-2:#5B5047;
+  --ink-3:#8A7C6E;
+  --line:#DCCFBC;
+  --line-2:#CDBCA4;
+
+  /* the laptop — identical in both themes */
+  --screen:#13161B;
+  --screen-2:#1A1F27;
+  --screen-3:#222834;
+  --screen-line:#2C333F;
+  --screen-ink:#E6EBF1;
+  --screen-ink-2:#94A3B4;
+
+  --honey:#E5A445;          /* the track lamp — fills, rules, glow */
+  --honey-ink:#9A6410;      /* same hue, legible as text on cream */
+  --oak:#C6A079;
+  --daylight:#CFDDE4;
+
+  /* editor syntax — dark panels only, never on the warm ground */
+  --sx-key:#BB9AF7;
+  --sx-str:#9ECE6A;
+  --sx-fn:#7AA2F7;
+  --sx-num:#E0AF68;
+  --sx-com:#5E6C7E;
+  --sx-cyan:#7DCFFF;
+
+  --radius:14px;
+  --radius-sm:8px;
+  --maxw:1180px;
+  --pad:clamp(20px,5vw,48px);
+
+  --f-display:"Bricolage Grotesque","Figtree",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --f-body:"Figtree",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#171310;
+    --ground-2:#1F1A16;
+    --ground-3:#26201A;
+    --ink:#F2E9DC;
+    --ink-2:#BCAC9A;
+    --ink-3:#8E7F70;
+    --line:#332B24;
+    --line-2:#453A31;
+    --honey-ink:#E5A445;
+    --oak:#A8825C;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#171310;
+  --ground-2:#1F1A16;
+  --ground-3:#26201A;
+  --ink:#F2E9DC;
+  --ink-2:#BCAC9A;
+  --ink-3:#8E7F70;
+  --line:#332B24;
+  --line-2:#453A31;
+  --honey-ink:#E5A445;
+  --oak:#A8825C;
+}
+
+/* ============================================================
+   base
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+body{
+  margin:0;
+  background:var(--ground);
+  color:var(--ink);
+  font-family:var(--f-body);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{
+  font-family:var(--f-display);
+  font-weight:600;
+  line-height:1.08;
+  letter-spacing:-.022em;
+  text-wrap:balance;
+  margin:0;
+}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+:focus-visible{outline:2.5px solid var(--honey);outline-offset:3px;border-radius:4px}
+
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* eyebrow — reads like a shell prompt. mono is structural here, not decorative */
+.eyebrow{
+  font-family:var(--f-mono);
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--honey-ink);
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  margin:0;
+}
+.eyebrow::before{
+  content:"";
+  width:7px;height:7px;
+  background:var(--honey);
+  flex:none;
+}
+.on-screen .eyebrow{color:var(--honey)}
+
+/* ============================================================
+   buttons
+   ============================================================ */
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--f-body);font-size:15px;font-weight:600;
+  padding:13px 22px;border-radius:var(--radius-sm);
+  border:1.5px solid transparent;text-decoration:none;cursor:pointer;
+  transition:transform .16s ease, background-color .16s ease, border-color .16s ease;
+  white-space:nowrap;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.btn-primary:hover{background:var(--honey);border-color:var(--honey);color:#1D1814}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-2)}
+.btn-ghost:hover{border-color:var(--ink)}
+.on-screen .btn-primary{background:var(--honey);border-color:var(--honey);color:#141110}
+.on-screen .btn-primary:hover{background:#F2B45A;border-color:#F2B45A}
+.on-screen .btn-ghost{color:var(--screen-ink);border-color:var(--screen-line)}
+.on-screen .btn-ghost:hover{border-color:var(--screen-ink-2)}
+.btn .arrow{transition:transform .16s ease}
+.btn:hover .arrow{transform:translateX(3px)}
+
+/* ============================================================
+   header
+   ============================================================ */
+.site-header{
+  position:sticky;top:0;z-index:60;
+  background:color-mix(in srgb, var(--ground) 88%, transparent);
+  backdrop-filter:saturate(1.4) blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.header-in{display:flex;align-items:center;gap:26px;height:70px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
+.brand-mark{
+  width:30px;height:30px;border-radius:8px;flex:none;
+  background:var(--screen);
+  display:grid;place-items:center;
+  font-family:var(--f-mono);font-size:15px;font-weight:700;color:var(--honey);
+  box-shadow:0 0 0 1px var(--screen-line), 0 4px 14px -6px rgba(229,164,69,.6);
+}
+.brand-name{font-family:var(--f-display);font-size:20px;font-weight:700;letter-spacing:-.03em}
+.nav{display:flex;align-items:center;gap:4px;margin-left:auto}
+.nav a{
+  font-size:14.5px;font-weight:500;color:var(--ink-2);
+  text-decoration:none;padding:8px 13px;border-radius:6px;
+  transition:color .15s ease,background-color .15s ease;
+}
+.nav a:hover{color:var(--ink);background:var(--ground-2)}
+.header-cta{margin-left:6px}
+.menu-btn{
+  display:none;margin-left:auto;background:none;border:1.5px solid var(--line-2);
+  color:var(--ink);border-radius:var(--radius-sm);padding:9px 13px;
+  font-family:var(--f-mono);font-size:13px;font-weight:500;cursor:pointer;
+}
+@media (max-width:900px){
+  .nav,.header-cta{display:none}
+  .menu-btn{display:block}
+  .nav.open{
+    display:flex;flex-direction:column;align-items:stretch;gap:2px;
+    position:absolute;top:70px;left:0;right:0;
+    background:var(--ground);border-bottom:1px solid var(--line);
+    padding:14px var(--pad) 22px;margin:0;
+  }
+  .nav.open a{padding:12px 10px;font-size:16px}
+}
+
+/* ============================================================
+   hero — the photograph, rebuilt.
+   warm copy on the left, the cool screen on the right.
+   ============================================================ */
+.hero{position:relative;overflow:hidden;padding:clamp(52px,8vw,96px) 0 clamp(60px,8vw,104px)}
+/* the lamp: warm light falling from upper-left, as in the photo */
+.hero::before{
+  content:"";position:absolute;inset:-30% 40% 30% -25%;
+  background:radial-gradient(ellipse at 30% 30%, rgba(229,164,69,.30), transparent 62%);
+  pointer-events:none;filter:blur(20px);
+}
+/* the window: cool daylight from the right */
+.hero::after{
+  content:"";position:absolute;inset:-10% -20% 40% 55%;
+  background:radial-gradient(ellipse at 70% 20%, rgba(125,207,255,.16), transparent 65%);
+  pointer-events:none;filter:blur(24px);
+}
+.hero-grid{
+  position:relative;display:grid;gap:clamp(38px,5vw,60px);
+  grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:center;
+}
+@media (max-width:960px){.hero-grid{grid-template-columns:minmax(0,1fr)}}
+
+.rating{display:flex;align-items:center;gap:11px;margin-bottom:22px}
+.stars{color:var(--honey);letter-spacing:2px;font-size:14px}
+.rating-text{font-family:var(--f-mono);font-size:12.5px;color:var(--ink-3);letter-spacing:.02em}
+.hero h1{font-size:clamp(38px,5.6vw,68px);letter-spacing:-.035em;margin-bottom:20px}
+.hero h1 em{
+  font-style:normal;color:var(--honey-ink);
+  font-variation-settings:"wdth" 88;
+}
+.hero-lead{font-size:clamp(17px,1.6vw,19.5px);color:var(--ink-2);max-width:52ch;margin-bottom:30px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
+.hero-disciplines{
+  display:flex;flex-wrap:wrap;gap:8px 10px;
+  padding-top:24px;border-top:1px solid var(--line);
+}
+.hero-disciplines span{
+  font-family:var(--f-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);border:1px solid var(--line);border-radius:100px;padding:6px 13px;
+}
+
+/* the editor panel */
+.editor{
+  background:var(--screen);
+  border-radius:var(--radius);
+  border:1px solid var(--screen-line);
+  box-shadow:0 40px 80px -32px rgba(20,14,8,.55), 0 0 0 1px rgba(0,0,0,.04);
+  overflow:hidden;
+  transform:perspective(1600px) rotateY(-4.5deg) rotateX(1.5deg);
+}
+@media (max-width:960px){.editor{transform:none}}
+.editor-bar{
+  display:flex;align-items:center;gap:8px;
+  padding:11px 15px;border-bottom:1px solid var(--screen-line);background:var(--screen-2);
+}
+.dot{width:10px;height:10px;border-radius:50%;flex:none}
+.dot-1{background:#E06C63}.dot-2{background:#E0AF68}.dot-3{background:#9ECE6A}
+.editor-file{
+  font-family:var(--f-mono);font-size:12px;color:var(--screen-ink-2);
+  margin-left:8px;
+}
+.editor-body{
+  margin:0;padding:20px 18px 24px;
+  font-family:var(--f-mono);font-size:13.2px;line-height:1.85;
+  color:var(--screen-ink);
+  overflow-x:auto;
+  counter-reset:ln;
+}
+.editor-body .ln{display:block;white-space:pre;padding-left:34px;position:relative}
+.editor-body .ln::before{
+  counter-increment:ln;content:counter(ln);
+  position:absolute;left:0;width:22px;text-align:right;
+  color:var(--sx-com);font-size:11.5px;
+}
+.k{color:var(--sx-key)}
+.s{color:var(--sx-str)}
+.f{color:var(--sx-fn)}
+.n{color:var(--sx-num)}
+.c{color:var(--sx-com);font-style:italic}
+.p{color:var(--screen-ink-2)}
+.y{color:var(--sx-cyan)}
+.caret{
+  display:inline-block;width:8px;height:15px;vertical-align:-2px;
+  background:var(--honey);animation:blink 1.15s steps(1,end) infinite;
+}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+.editor-status{
+  display:flex;flex-wrap:wrap;align-items:center;gap:16px;
+  padding:9px 16px;border-top:1px solid var(--screen-line);background:var(--screen-2);
+  font-family:var(--f-mono);font-size:11px;color:var(--screen-ink-2);letter-spacing:.04em;
+}
+.editor-status .live{display:inline-flex;align-items:center;gap:7px;color:var(--sx-str)}
+.editor-status .live::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--sx-str)}
+
+/* ============================================================
+   section shells
+   ============================================================ */
+.band{padding:clamp(60px,8vw,104px) 0}
+.band-warm{background:var(--ground)}
+.band-raised{background:var(--ground-2);border-block:1px solid var(--line)}
+.on-screen{background:var(--screen);color:var(--screen-ink)}
+.on-screen h2,.on-screen h3,.on-screen h4{color:var(--screen-ink)}
+
+.band-head{max-width:62ch;margin-bottom:clamp(34px,4vw,52px)}
+.band-head h2{font-size:clamp(29px,3.7vw,45px);margin:16px 0 14px}
+.band-head p{color:var(--ink-2);font-size:17.5px}
+.on-screen .band-head p{color:var(--screen-ink-2)}
+
+.grid{display:grid;gap:18px}
+.g-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:980px){.g-3,.g-4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.g-2,.g-3,.g-4{grid-template-columns:minmax(0,1fr)}}
+
+/* ============================================================
+   services
+   ============================================================ */
+.svc{
+  background:var(--ground);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 24px 28px;position:relative;
+  transition:border-color .18s ease, transform .18s ease;
+}
+.band-warm .svc{background:var(--ground-2)}
+.svc:hover{border-color:var(--oak);transform:translateY(-3px)}
+.svc-num{
+  font-family:var(--f-mono);font-size:11px;color:var(--ink-3);
+  letter-spacing:.1em;display:block;margin-bottom:16px;
+}
+.svc h3{font-size:20.5px;margin-bottom:9px;letter-spacing:-.02em}
+.svc p{color:var(--ink-2);font-size:15.5px;line-height:1.6}
+.svc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.svc-tags span{
+  font-family:var(--f-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--ink-3);background:var(--ground-3);border-radius:5px;padding:4px 8px;
+}
+
+/* ============================================================
+   technology — dark screen band
+   ============================================================ */
+.tech{
+  background:var(--screen-2);border:1px solid var(--screen-line);
+  border-radius:var(--radius);padding:24px 22px 26px;
+  transition:border-color .18s ease;
+}
+.tech:hover{border-color:#3A4452}
+.tech h3{font-size:18.5px;margin-bottom:6px;letter-spacing:-.015em}
+.tech > p{color:var(--screen-ink-2);font-size:14.5px;margin-bottom:18px;line-height:1.55}
+.tech dl{margin:0;display:grid;gap:11px}
+.tech dt{
+  font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--sx-com);margin-bottom:3px;
+}
+.tech dd{margin:0;font-family:var(--f-mono);font-size:13px;color:var(--sx-cyan);line-height:1.55}
+
+/* stack bars */
+.bars{display:grid;gap:26px;grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:760px){.bars{grid-template-columns:minmax(0,1fr)}}
+.bars h3{font-size:15px;font-family:var(--f-mono);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--screen-ink-2);margin-bottom:18px}
+.bar{margin-bottom:15px}
+.bar-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px}
+.bar-name{font-size:14.5px;font-weight:500}
+.bar-val{font-family:var(--f-mono);font-size:12.5px;color:var(--sx-num);font-variant-numeric:tabular-nums}
+.bar-track{height:5px;border-radius:100px;background:var(--screen-3);overflow:hidden}
+.bar-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--honey),var(--sx-cyan))}
+
+/* ============================================================
+   process — a genuine sequence, so it is genuinely numbered
+   ============================================================ */
+.steps{counter-reset:step;display:grid;gap:0}
+.step{
+  display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;
+  padding:26px 0;border-top:1px solid var(--line);align-items:start;
+}
+.step:last-child{border-bottom:1px solid var(--line)}
+.step-n{
+  counter-increment:step;
+  font-family:var(--f-mono);font-size:12px;font-weight:700;color:var(--honey-ink);
+  border:1.5px solid var(--honey);border-radius:50%;
+  width:38px;height:38px;display:grid;place-items:center;flex:none;
+  font-variant-numeric:tabular-nums;
+}
+.step-n::before{content:"0" counter(step)}
+.step h3{font-size:21px;margin-bottom:7px}
+.step p{color:var(--ink-2);font-size:16px;max-width:60ch}
+.step-meta{font-family:var(--f-mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.06em;margin-top:9px;text-transform:uppercase}
+
+/* ============================================================
+   industries
+   ============================================================ */
+.ind{
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 22px;background:var(--ground);
+  transition:background-color .18s ease,border-color .18s ease;
+}
+.band-raised .ind{background:var(--ground)}
+.ind:hover{border-color:var(--oak)}
+.ind h3{font-size:19px;margin-bottom:8px}
+.ind p{color:var(--ink-2);font-size:15px;line-height:1.6}
+
+/* ============================================================
+   work
+   ============================================================ */
+.work{
+  border:1px solid var(--screen-line);border-radius:var(--radius);
+  background:var(--screen-2);overflow:hidden;display:flex;flex-direction:column;
+}
+.work-top{
+  padding:22px 22px 0;display:flex;justify-content:space-between;align-items:flex-start;gap:14px;
+}
+.work-kind{
+  font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--honey);
+}
+.work-score{
+  font-family:var(--f-mono);font-size:12px;color:var(--sx-num);
+  font-variant-numeric:tabular-nums;flex:none;
+}
+.work-body{padding:12px 22px 22px;flex:1}
+.work-body h3{font-size:20px;margin-bottom:9px;letter-spacing:-.02em}
+.work-body p{color:var(--screen-ink-2);font-size:15px;line-height:1.6}
+.work-stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.work-stack span{
+  font-family:var(--f-mono);font-size:10.5px;color:var(--sx-cyan);
+  border:1px solid var(--screen-line);border-radius:5px;padding:4px 8px;
+}
+.work-foot{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--screen-line);
+}
+.work-foot div{padding:13px 10px;text-align:center;border-right:1px solid var(--screen-line)}
+.work-foot div:last-child{border-right:0}
+.work-foot b{
+  display:block;font-family:var(--f-mono);font-size:17px;color:var(--screen-ink);
+  font-weight:700;font-variant-numeric:tabular-nums;
+}
+.work-foot span{font-family:var(--f-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--sx-com)}
+
+/* ============================================================
+   internship
+   ============================================================ */
+.intern-grid{display:grid;gap:clamp(34px,4vw,56px);grid-template-columns:minmax(0,.85fr) minmax(0,1fr);align-items:start}
+@media (max-width:900px){.intern-grid{grid-template-columns:minmax(0,1fr)}}
+.intern-list{display:grid;gap:2px}
+.intern-item{padding:20px 0;border-top:1px solid var(--line)}
+.intern-item:last-child{border-bottom:1px solid var(--line)}
+.intern-item h3{font-size:18.5px;margin-bottom:6px}
+.intern-item p{color:var(--ink-2);font-size:15.5px;line-height:1.6;max-width:56ch}
+.roles{
+  background:var(--ground-2);border:1px solid var(--line);
+  border-radius:var(--radius);padding:24px 22px;
+}
+.roles h3{font-size:17px;margin-bottom:4px}
+.roles > p{font-size:14.5px;color:var(--ink-2);margin-bottom:18px}
+.role{
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:14px 0;border-top:1px solid var(--line);text-decoration:none;
+  transition:padding-inline-start .16s ease;
+}
+.role:hover{padding-inline-start:6px}
+.role b{font-size:15.5px;font-weight:600;display:block}
+.role em{
+  font-style:normal;font-family:var(--f-mono);font-size:11px;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);
+}
+.role .arrow{color:var(--honey-ink);flex:none;font-size:17px}
+
+/* ============================================================
+   cta
+   ============================================================ */
+.cta{position:relative;overflow:hidden}
+.cta::before{
+  content:"";position:absolute;inset:auto -10% -60% 20%;height:380px;
+  background:radial-gradient(ellipse at 50% 100%, rgba(229,164,69,.28), transparent 66%);
+  filter:blur(30px);pointer-events:none;
+}
+.cta-in{position:relative;text-align:center;max-width:640px;margin-inline:auto}
+.cta h2{font-size:clamp(31px,4.4vw,52px);margin:16px 0 16px}
+.cta p{color:var(--screen-ink-2);font-size:18px;margin-bottom:30px}
+.cta .eyebrow{justify-content:center}
+.cta-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.cta-note{
+  margin-top:26px;font-family:var(--f-mono);font-size:11.5px;
+  letter-spacing:.06em;color:var(--sx-com);
+}
+
+/* ============================================================
+   footer
+   ============================================================ */
+.site-footer{background:var(--ground-2);border-top:1px solid var(--line);padding:clamp(48px,6vw,72px) 0 30px}
+.foot-grid{display:grid;gap:36px;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr))}
+@media (max-width:860px){.foot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.foot-grid{grid-template-columns:minmax(0,1fr)}}
+.foot-about p{color:var(--ink-2);font-size:15px;max-width:36ch;margin:14px 0 18px}
+.foot-social{display:flex;gap:8px}
+.foot-social a{
+  font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  border:1px solid var(--line-2);border-radius:6px;padding:7px 11px;
+  text-decoration:none;color:var(--ink-2);transition:border-color .15s ease,color .15s ease;
+}
+.foot-social a:hover{border-color:var(--ink);color:var(--ink)}
+.foot-col h4{
+  font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-3);margin-bottom:14px;
+}
+.foot-col li{margin-bottom:9px}
+.foot-col a{font-size:15px;color:var(--ink-2);text-decoration:none;transition:color .15s ease}
+.foot-col a:hover{color:var(--honey-ink)}
+.foot-bottom{
+  margin-top:44px;padding-top:22px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;
+  font-family:var(--f-mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.03em;
+}
+.foot-bottom a{text-decoration:none;color:var(--ink-3)}
+.foot-bottom a:hover{color:var(--ink)}
+.foot-legal{display:flex;gap:18px;flex-wrap:wrap}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<a class="sr" href="#main">Skip to content</a>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="brand" href="https://oxohive.com/">
+      <span class="brand-mark" aria-hidden="true">O</span>
+      <span class="brand-name">Oxohive</span>
+    </a>
+
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">MENU</button>
+
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#technology">Technology</a>
+      <a href="#process">Process</a>
+      <a href="#work">Work</a>
+      <a href="#internship">Internship</a>
+    </nav>
+
+    <a class="btn btn-primary header-cta" href="#contact">
+      Book a call <span class="arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+
+    <div>
+      <!-- PLACEHOLDER: replace rating + review count with real figures before launch -->
+      <div class="rating">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <span class="rating-text">4.9 average · 200+ reviews</span>
+      </div>
+
+      <h1>Drive success in the digital era with <em>Oxohive</em> by your side.</h1>
+
+      <p class="hero-lead">
+        We build the web platforms, mobile apps, CRM and ERP systems that businesses
+        actually run on — then make sure people can find them. Tell us about your
+        project and get a quote in minutes.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Book a call <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="#work">See our work</a>
+      </div>
+
+      <div class="hero-disciplines">
+        <span>Design</span><span>Development</span><span>Marketing</span><span>Strategy</span>
+      </div>
+    </div>
+
+    <!-- the cool screen inside the warm room -->
+    <div class="editor" role="img" aria-label="A code editor showing the Oxohive service configuration: web, mobile, ERP and CRM builds, SEO and content growth, deployed globally in about six weeks.">
+      <div class="editor-bar">
+        <span class="dot dot-1"></span><span class="dot dot-2"></span><span class="dot dot-3"></span>
+        <span class="editor-file">oxohive.config.ts</span>
+      </div>
+      <pre class="editor-body" aria-hidden="true"><code><span class="ln"><span class="c">// what we do, in one file</span></span><span class="ln"><span class="k">export default</span> <span class="p">{</span></span><span class="ln">  <span class="f">name</span><span class="p">:</span> <span class="s">"Oxohive"</span><span class="p">,</span></span><span class="ln">  <span class="f">domain</span><span class="p">:</span> <span class="s">"oxohive.com"</span><span class="p">,</span></span><span class="ln"></span><span class="ln">  <span class="f">build</span><span class="p">:</span> <span class="p">[</span><span class="s">"web"</span><span class="p">,</span> <span class="s">"mobile"</span><span class="p">,</span> <span class="s">"erp"</span><span class="p">,</span> <span class="s">"crm"</span><span class="p">],</span></span><span class="ln">  <span class="f">grow</span><span class="p">:</span>  <span class="p">[</span><span class="s">"seo"</span><span class="p">,</span> <span class="s">"content"</span><span class="p">,</span> <span class="s">"ppc"</span><span class="p">],</span></span><span class="ln"></span><span class="ln">  <span class="f">stack</span><span class="p">:</span> <span class="p">{</span></span><span class="ln">    <span class="f">front</span><span class="p">:</span> <span class="y">Next</span><span class="p">,</span> <span class="f">back</span><span class="p">:</span> <span class="y">Spring</span><span class="p">,</span> <span class="f">db</span><span class="p">:</span> <span class="y">Postgres</span><span class="p">,</span></span><span class="ln">  <span class="p">},</span></span><span class="ln"></span><span class="ln">  <span class="k">async</span> <span class="f">ship</span><span class="p">()</span> <span class="p">{</span></span><span class="ln">    <span class="k">await</span> <span class="f">deploy</span><span class="p">({</span> <span class="f">uptime</span><span class="p">:</span> <span class="n">99.9</span> <span class="p">})</span></span><span class="ln">    <span class="k">return</span> <span class="s">"live in ~6 weeks"</span><span class="caret"></span></span><span class="ln">  <span class="p">}</span></span><span class="ln"><span class="p">}</span></span></code></pre>
+      <div class="editor-status">
+        <span class="live">deploy: passing</span>
+        <span>main</span>
+        <span>TypeScript</span>
+        <span>UTF-8</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="band band-raised" id="services">
+  <div class="wrap">
+    <div class="band-head reveal">
+      <p class="eyebrow">Services</p>
+      <h2>Built from the ground up.</h2>
+      <p>Every service is designed to do one thing — make your business impossible to overlook.</p>
+    </div>
+
+    <div class="grid g-3">
+      <article class="svc reveal">
+        <span class="svc-num">01 / BUILD</span>
+        <h3>Web Design &amp; Development</h3>
+        <p>Take your business further with sites and platforms built to be fast, accessible, and genuinely pleasant to use.</p>
+        <div class="svc-tags"><span>Next.js</span><span>Spring Boot</span><span>Postgres</span></div>
+      </article>
+
+      <article class="svc reveal">
+        <span class="svc-num">02 / GROW</span>
+        <h3>Search Engine Optimization</h3>
+        <p>Get to the top of the results page and stay there, with technical SEO that holds up long after launch.</p>
+        <div class="svc-tags"><span>Technical</span><span>On-page</span><span>Local</span></div>
+      </article>
+
+      <article class="svc reveal">
+        <span class="svc-num">03 / GROW</span>
+        <h3>Content Creation</h3>
+        <p>Words, images, and video that give your brand something worth saying — and a reason for people to come back.</p>
+        <div class="svc-tags"><span>Editorial</span><span>Video</span><span>Brand</span></div>
+      </article>
+
+      <article class="svc reveal">
+        <span class="svc-num">04 / GROW</span>
+        <h3>Social Media Marketing</h3>
+        <p>Show up where your customers already are, with a presence that earns attention instead of buying it.</p>
+        <div class="svc-tags"><span>Strategy</span><span>Community</span><span>Reporting</span></div>
+      </article>
+
+      <article class="svc reveal">
+        <span class="svc-num">05 / GROW</span>
+        <h3>Email Marketing</h3>
+        <p>Stay in touch with the people who already chose you. Lifecycle campaigns that drive repeat revenue, not unsubscribes.</p>
+        <div class="svc-tags"><span>Lifecycle</span><span>Automation</span><span>CRM</span></div>
+      </article>
+
+      <article class="svc reveal">
+        <span class="svc-num">06 / GROW</span>
+        <h3>Pay-Per-Click Advertising</h3>
+        <p>Stop paying for clicks that go nowhere. We build and manage campaigns that reach the people actually ready to buy.</p>
+        <div class="svc-tags"><span>Search</span><span>Paid social</span><span>Analytics</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TECHNOLOGY (screen band) ===================== -->
+<section class="band on-screen" id="technology">
+  <div class="wrap">
+    <div class="band-head reveal">
+      <p class="eyebrow">Technology</p>
+      <h2>The stack we build on.</h2>
+      <p>Battle-tested tools, chosen because they hold up in production — not because they trended last quarter.</p>
+    </div>
+
+    <div class="grid g-3" style="margin-bottom:22px">
+      <article class="tech reveal">
+        <h3>Web &amp; Backend</h3>
+        <p>Scalable, secure platforms with the boring parts done properly.</p>
+        <dl>
+          <div><dt>Languages</dt><dd>Java · JavaScript · Python</dd></div>
+          <div><dt>Frameworks</dt><dd>Spring Boot · Node.js · Django</dd></div>
+          <div><dt>Databases</dt><dd>PostgreSQL · MongoDB · MySQL</dd></div>
+          <div><dt>APIs</dt><dd>REST · GraphQL</dd></div>
+        </dl>
+      </article>
+
+      <article class="tech reveal">
+        <h3>Mobile</h3>
+        <p>Cross-platform apps that feel native on both Android and iOS.</p>
+        <dl>
+          <div><dt>Frameworks</dt><dd>React Native · Flutter</dd></div>
+          <div><dt>Native</dt><dd>Kotlin · Swift</dd></div>
+          <div><dt>Tooling</dt><dd>Expo · Fastlane · Firebase</dd></div>
+          <div><dt>Release</dt><dd>Play Store · App Store</dd></div>
+        </dl>
+      </article>
+
+      <article class="tech reveal">
+        <h3>Frontend</h3>
+        <p>Interfaces that stay quick on real devices and real connections.</p>
+        <dl>
+          <div><dt>Libraries</dt><dd>React · Vue · Angular</dd></div>
+          <div><dt>Meta-frameworks</dt><dd>Next.js · Nuxt</dd></div>
+          <div><dt>Styling</dt><dd>Tailwind · SCSS</dd></div>
+          <div><dt>Quality</dt><dd>Core Web Vitals · a11y</dd></div>
+        </dl>
+      </article>
+
+      <article class="tech reveal">
+        <h3>Cloud &amp; Infrastructure</h3>
+        <p>Deployments you can reason about, and roll back without drama.</p>
+        <dl>
+          <div><dt>Providers</dt><dd>AWS · Google Cloud · Azure</dd></div>
+          <div><dt>Orchestration</dt><dd>Kubernetes · Docker</dd></div>
+          <div><dt>Pipelines</dt><dd>CI/CD · GitHub Actions</dd></div>
+          <div><dt>IaC</dt><dd>Terraform · Nginx</dd></div>
+        </dl>
+      </article>
+
+      <article class="tech reveal">
+        <h3>AI &amp; Machine Learning</h3>
+        <p>Models put to work on real problems, not bolted on for the press release.</p>
+        <dl>
+          <div><dt>Frameworks</dt><dd>TensorFlow · PyTorch</dd></div>
+          <div><dt>APIs</dt><dd>Anthropic · OpenAI</dd></div>
+          <div><dt>Applied</dt><dd>Computer Vision · NLP</dd></div>
+          <div><dt>Serving</dt><dd>Vector search · RAG</dd></div>
+        </dl>
+      </article>
+
+      <article class="tech reveal">
+        <h3>Business Systems</h3>
+        <p>The CRM and ERP layer that keeps operations, sales, and finance in step.</p>
+        <dl>
+          <div><dt>ERP</dt><dd>Inventory · Finance · HR</dd></div>
+          <div><dt>CRM</dt><dd>Pipeline · Support · Billing</dd></div>
+          <div><dt>Integration</dt><dd>Webhooks · SSO · ETL</dd></div>
+          <div><dt>Reporting</dt><dd>Dashboards · Exports</dd></div>
+        </dl>
+      </article>
+    </div>
+
+    <!-- depth-of-experience bars -->
+    <div class="tech reveal" style="padding:28px 26px 30px">
+      <div class="bars">
+        <div>
+          <h3>Frontend depth</h3>
+          <!-- PLACEHOLDER: percentages are illustrative — set from real team capability -->
+          <div class="bar"><div class="bar-top"><span class="bar-name">React</span><span class="bar-val">95%</span></div><div class="bar-track"><div class="bar-fill" style="width:95%"></div></div></div>
+          <div class="bar"><div class="bar-top"><span class="bar-name">Vue.js</span><span class="bar-val">85%</span></div><div class="bar-track"><div class="bar-fill" style="width:85%"></div></div></div>
+          <div class="bar"><div class="bar-top"><span class="bar-name">Angular</span><span class="bar-val">80%</span></div><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div></div>
+        </div>
+        <div>
+          <h3>Backend depth</h3>
+          <div class="bar"><div class="bar-top"><span class="bar-name">Node.js</span><span class="bar-val">90%</span></div><div class="bar-track"><div class="bar-fill" style="width:90%"></div></div></div>
+          <div class="bar"><div class="bar-top"><span class="bar-name">Python</span><span class="bar-val">88%</span></div><div class="bar-track"><div class="bar-fill" style="width:88%"></div></div></div>
+          <div class="bar"><div class="bar-top"><span class="bar-name">Java</span><span class="bar-val">85%</span></div><div class="bar-track"><div class="bar-fill" style="width:85%"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROCESS ===================== -->
+<section class="band band-warm" id="process">
+  <div class="wrap">
+    <div class="band-head reveal">
+      <p class="eyebrow">Process</p>
+      <h2>Four stages, no surprises.</h2>
+      <p>You always know what we're doing this week, and what lands next.</p>
+    </div>
+
+    <div class="steps">
+      <article class="step reveal">
+        <div class="step-n" aria-hidden="true"></div>
+        <div>
+          <h3>Discovery</h3>
+          <p>We work out what you actually need — the requirements, the constraints, and the outcome you're measuring against.</p>
+          <p class="step-meta">Week 1 · Scope &amp; fixed quote</p>
+        </div>
+      </article>
+
+      <article class="step reveal">
+        <div class="step-n" aria-hidden="true"></div>
+        <div>
+          <h3>Design</h3>
+          <p>Wireframes, user flows, and interface design — reviewed with you before a single line of production code gets written.</p>
+          <p class="step-meta">Weeks 2–3 · Prototype you can click</p>
+        </div>
+      </article>
+
+      <article class="step reveal">
+        <div class="step-n" aria-hidden="true"></div>
+        <div>
+          <h3>Development</h3>
+          <p>We build in short cycles with working software at the end of each one, so progress is visible rather than promised.</p>
+          <p class="step-meta">Weeks 3–6 · Weekly demos</p>
+        </div>
+      </article>
+
+      <article class="step reveal">
+        <div class="step-n" aria-hidden="true"></div>
+        <div>
+          <h3>Deploy</h3>
+          <p>Testing, launch, and the support that follows. We stay on after go-live, because that's when the real feedback arrives.</p>
+          <p class="step-meta">Week 6 onward · Monitoring &amp; support</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INDUSTRIES ===================== -->
+<section class="band band-raised">
+  <div class="wrap">
+    <div class="band-head reveal">
+      <p class="eyebrow">Industries</p>
+      <h2>Where we go deep.</h2>
+      <p>Domains where we already know the regulations, the edge cases, and the things that go wrong at 2am.</p>
+    </div>
+
+    <div class="grid g-4">
+      <article class="ind reveal">
+        <h3>FinTech</h3>
+        <p>Payment processing, banking apps, and trading platforms — built to the compliance bar from day one.</p>
+      </article>
+      <article class="ind reveal">
+        <h3>Healthcare</h3>
+        <p>Patient management, telemedicine, and health analytics, with privacy handled as a requirement rather than a feature.</p>
+      </article>
+      <article class="ind reveal">
+        <h3>E-commerce</h3>
+        <p>Storefronts, inventory, and analytics that stay fast on the days that matter most.</p>
+      </article>
+      <article class="ind reveal">
+        <h3>Education</h3>
+        <p>Learning platforms, student management, and LMS builds designed for people who aren't power users.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WORK (screen band) ===================== -->
+<section class="band on-screen" id="work">
+  <div class="wrap">
+    <div class="band-head reveal">
+      <p class="eyebrow">Selected work</p>
+      <h2>Projects that shipped.</h2>
+      <p>A sample of recent builds. Full case studies available on request.</p>
+    </div>
+
+    <!-- PLACEHOLDER: swap for real client projects, ratings and figures before launch -->
+    <div class="grid g-3">
+      <article class="work reveal">
+        <div class="work-top">
+          <span class="work-kind">Full-stack · UI/UX</span>
+          <span class="work-score">4.8</span>
+        </div>
+        <div class="work-body">
+          <h3>Digital Solutions Platform</h3>
+          <p>An agency operating system covering project delivery, client reporting, and portfolio management in one place.</p>
+          <div class="work-stack"><span>React</span><span>Next.js</span><span>Node</span><span>MongoDB</span></div>
+        </div>
+        <div class="work-foot">
+          <div><b>15+</b><span>Projects</span></div>
+          <div><b>25+</b><span>Clients</span></div>
+          <div><b>4.8</b><span>Rating</span></div>
+        </div>
+      </article>
+
+      <article class="work reveal">
+        <div class="work-top">
+          <span class="work-kind">EdTech platform</span>
+          <span class="work-score">4.6</span>
+        </div>
+        <div class="work-body">
+          <h3>Learning &amp; Innovation Hub</h3>
+          <p>A hands-on education platform for AI, IoT, and robotics coursework, built around real project work rather than video lectures.</p>
+          <div class="work-stack"><span>Next.js</span><span>Python</span><span>Postgres</span><span>AWS</span></div>
+        </div>
+        <div class="work-foot">
+          <div><b>40+</b><span>Courses</span></div>
+          <div><b>1.2k</b><span>Learners</span></div>
+          <div><b>4.6</b><span>Rating</span></div>
+        </div>
+      </article>
+
+      <article class="work reveal">
+        <div class="work-top">
+          <span class="work-kind">ERP · Operations</span>
+          <span class="work-score">4.9</span>
+        </div>
+        <div class="work-body">
+          <h3>Inventory &amp; Finance Suite</h3>
+          <p>A custom ERP replacing five disconnected spreadsheets, with live stock levels and month-end close cut from days to hours.</p>
+          <div class="work-stack"><span>Spring Boot</span><span>Postgres</span><span>Docker</span><span>Terraform</span></div>
+        </div>
+        <div class="work-foot">
+          <div><b>5</b><span>Systems merged</span></div>
+          <div><b>99.9%</b><span>Uptime</span></div>
+          <div><b>4.9</b><span>Rating</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INTERNSHIP ===================== -->
+<section class="band band-warm" id="internship">
+  <div class="wrap">
+    <div class="band-head reveal">
+      <p class="eyebrow">Internship</p>
+      <h2>From learner to industry-ready.</h2>
+      <p>A structured programme with live training, personal mentorship, and real project work — flexible enough to fit around everything else you're doing.</p>
+    </div>
+
+    <div class="intern-grid">
+      <div class="intern-list reveal">
+        <div class="intern-item">
+          <h3>Hands-on, project-based learning</h3>
+          <p>You apply what you learn on real builds and task-based sprints, not exercises invented for a classroom.</p>
+        </div>
+        <div class="intern-item">
+          <h3>Mentorship that continues</h3>
+          <p>Mentors stay with you through both stages — learning and training — with personal feedback and career advice throughout.</p>
+        </div>
+        <div class="intern-item">
+          <h3>Certified and recognised</h3>
+          <p>Finish with a course certificate, an internship certificate, and a letter of recommendation.</p>
+        </div>
+        <div class="intern-item">
+          <h3>Career support you can use</h3>
+          <p>Resume review and LinkedIn profile work, so you're positioned properly when the opportunities show up.</p>
+        </div>
+      </div>
+
+      <aside class="roles reveal">
+        <h3>Open roles</h3>
+        <p>Applications reviewed on a rolling basis.</p>
+
+        <a class="role" href="/career/ui-ux-developer-intern">
+          <span><b>UI/UX Developer Intern</b><em>Remote · 3 months</em></span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="role" href="/career/full-stack-developer-intern">
+          <span><b>Full Stack Developer Intern</b><em>Remote · 3 months</em></span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="role" href="/career/content-writing-intern">
+          <span><b>Content Writing Intern</b><em>Remote · 3 months</em></span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+
+        <div style="margin-top:22px">
+          <a class="btn btn-primary" href="#contact" style="width:100%;justify-content:center">
+            Enrol now <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA (screen band) ===================== -->
+<section class="band on-screen cta" id="contact">
+  <div class="wrap cta-in">
+    <p class="eyebrow">Let's meet</p>
+    <h2>Tell us what you're building.</h2>
+    <p>We're always glad to meet new people and hear about new projects. Book a slot and we'll come back with a quote in minutes, not weeks.</p>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="mailto:hello@oxohive.com">Book a call <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="btn btn-ghost" href="mailto:hello@oxohive.com">hello@oxohive.com</a>
+    </div>
+    <p class="cta-note">Free consultation · Development &amp; design · Technical support</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+
+      <div class="foot-about">
+        <a class="brand" href="https://oxohive.com/">
+          <span class="brand-mark" aria-hidden="true">O</span>
+          <span class="brand-name">Oxohive</span>
+        </a>
+        <p>Websites, mobile apps, CRM and ERP systems, and the search work that makes sure they get found.</p>
+        <div class="foot-social">
+          <a href="https://oxohive.com/" rel="noopener">Instagram</a>
+          <a href="https://oxohive.com/" rel="noopener">LinkedIn</a>
+          <a href="https://oxohive.com/" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Web Development</a></li>
+          <li><a href="#services">SEO</a></li>
+          <li><a href="#services">Content Creation</a></li>
+          <li><a href="#services">Social Media</a></li>
+          <li><a href="#services">Email Marketing</a></li>
+          <li><a href="#services">PPC Advertising</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#technology">Technology</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#internship">Internship</a></li>
+          <li><a href="#contact">Book a call</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Careers</h4>
+        <ul>
+          <li><a href="/career/ui-ux-developer-intern">UI/UX Developer Intern</a></li>
+          <li><a href="/career/full-stack-developer-intern">Full Stack Developer Intern</a></li>
+          <li><a href="/career/content-writing-intern">Content Writing Intern</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 Oxohive · oxohive.com</span>
+      <span class="foot-legal">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// mobile nav
+(function(){
+  var btn = document.getElementById('menuBtn');
+  var nav = document.getElementById('nav');
+  if(!btn || !nav) return;
+  btn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.textContent = open ? 'CLOSE' : 'MENU';
+  });
+  nav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A' && nav.classList.contains('open')){
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      btn.textContent = 'MENU';
+    }
+  });
+})();
+
+// scroll reveal
+(function(){
+  var items = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window) ||
+     window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    items.forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en, i){
+      if(en.isIntersecting){
+        var el = en.target;
+        setTimeout(function(){ el.classList.add('in'); }, Math.min(i * 60, 240));
+        io.unobserve(el);
+      }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+  items.forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+</body>
+</html>

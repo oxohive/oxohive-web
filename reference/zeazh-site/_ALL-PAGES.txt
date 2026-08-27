@@ -1,0 +1,1421 @@
+ZEAZH WEBSITE — FULL CONTENT EXTRACTION
+Source: https://zeazhsite-git-main-sheikxms-projects.vercel.app
+Extracted: 2026-08-20
+Pages: 10
+
+======================================================================
+
+
+######################################################################
+# PAGE: /
+# FILE: home.txt
+# URL:  https://zeazhsite-git-main-sheikxms-projects.vercel.app/
+######################################################################
+
+TITLE: Zeazh: Your Go-To Partner for Website Development, CRM, ERP, and SEO Excellence
+DESCRIPTION: streamline and Grow with Zeazh: Websites, CRM, ERP, and SEO Services
+
+======================================================================
+
+[image: Zeazh Logo]
+Zeazh
+InternshipShowcaseServicesCourse
+Career
+UI/UX Developer InternFull Stack Developer InternContent Writing Intern
+
+Book a call
+
+⭐ ⭐ ⭐ ⭐ ⭐
+4.9 stars 200+ google reviews
+
+#
+
+# Drive Success in the Digital Era with
+
+Zeazh by Your Side
+
+Schedule a call with us to discuss your project and get a quote in minutes
+
+Book a CallShowcase
+
+Design
+
+Development
+
+Marketing
+
+Strategy
+
+#
+Builtfromthegroundup
+
+All of our services are designed to help your business stand out
+
+[image: image]
+
+# Web Design + Development
+
+Take your business to the next level with our web design and development services
+
+[image: image]
+
+# Search Engine Optimization
+
+Get your website to the top of search engine results with our SEO services
+
+[image: image]
+
+# Content Creation
+
+Boost your brand's online presence with our social media marketing services
+
+[image: image]
+
+# Social Media Marketing
+
+Interact with your customers and increase sales with our email marketing services
+
+[image: image]
+
+# Email Marketing
+
+With our content creation services, we help businesses drive results
+
+[image: image]
+
+# Pay-Per-Click Advertising
+
+Don't waste money on ineffective advertising. Our PPC services help you reach your target audience
+
+Zeazh: Your Go-To Partner for Website Development, CRM, ERP, and SEO Excellence
+
+Zeazh: Your Go-To Partner for Website Development, CRM, ERP, and SEO Excellence
+
+# Technologies
+[image: image]
+We Use
+[image: image]
+
+We leverage cutting-edge technologies to build scalable and modern solutions
+
+[image: web development]
+
+## Web & Backend Development
+
+We build scalable and secure web platforms using battle-tested technologies.
+
+Languages:Java, JavaScript, Python
+
+Frameworks:Spring Boot, Node.js, Django
+
+Databases:PostgreSQL, MongoDB, MySQL
+
+API Standards:REST, GraphQL
+
+DevOps:Docker, Nginx, GitHub Actions, AWS
+
+[image: mobile development]
+
+## Mobile App Development
+
+Cross-platform mobile apps that work seamlessly on both Android & iOS.
+
+Frameworks:React Native, Flutter
+
+Native Support:Android (Java/Kotlin), iOS (Swift)
+
+UI/UX:Custom mobile-first design
+
+Build Tools:Expo, Fastlane, Firebase
+
+Deployment:Google Play Store & Apple App Store
+
+[image: frontend]
+
+### Frontend Development
+
+React, Vue.js, Angular
+
+Next.js, Nuxt.js
+
+Tailwind CSS, SCSS
+
+[image: cloud]
+
+### Cloud & Infrastructure
+
+AWS, Google Cloud, Azure
+
+Kubernetes, Docker
+
+CI/CD, Terraform
+
+[image: ai]
+
+### AI & Machine Learning
+
+TensorFlow, PyTorch
+
+OpenAI, Anthropic APIs
+
+Computer Vision, NLP
+
+## Our Development Process
+
+1
+
+### Discovery
+
+Understanding your requirements and goals
+
+2
+
+### Design
+
+Creating wireframes and user experience design
+
+3
+
+### Development
+
+Building robust and scalable solutions
+
+4
+
+### Deploy
+
+Testing, deployment, and ongoing support
+
+## Why Choose Our Tech Stack?
+
+[image: performance]
+
+### High Performance
+
+Optimized for speed and efficiency
+
+[image: scalability]
+
+### Scalability
+
+Grows with your business needs
+
+[image: security]
+
+### Security First
+
+Enterprise-grade security standards
+
+## Industry Specializations
+
+[image: fintech]
+
+### FinTech
+
+Payment processing, banking apps, trading platforms
+
+[image: healthcare]
+
+### Healthcare
+
+Patient management, telemedicine, health analytics
+
+[image: ecommerce]
+
+### E-commerce
+
+Online stores, inventory management, analytics
+
+[image: education]
+
+### Education
+
+Learning platforms, student management, LMS
+
+## Technology Stack Comparison
+
+### Frontend Technologies
+
+React.js
+
+95%
+
+Vue.js
+
+85%
+
+Angular
+
+80%
+
+### Backend Technologies
+
+Node.js
+
+90%
+
+Python
+
+88%
+
+Java
+
+85%
+
+## Typical Project Timeline
+
+### Week 1-2
+
+Project Planning & Design
+
+1
+
+Requirements gathering, wireframes, UI/UX design
+
+Frontend development, API integration
+
+2
+
+### Week 3-6
+
+Development Phase
+
+### Week 7-8
+
+Testing & Deployment
+
+3
+
+Quality assurance, bug fixes, deployment
+
+## Our Team Certifications
+
+AWS
+
+Cloud Practitioner
+
+GCP
+
+Cloud Engineer
+
+Azure
+
+Fundamentals
+
+K8s
+
+Kubernetes
+
+React
+
+Certified Dev
+
+Docker
+
+Certified
+
+## Our Success Metrics
+
+%
+
+Uptime Guarantee
+
+h
+
+Response Time
+
++
+
+Projects Delivered
+
+%
+
+Client Satisfaction
+
+# Frequently Asked Questions
+
+Everything you need to know about our services and process
+
+### How long does a typical project take?
+
+Project timelines vary based on complexity. A simple website takes 2-4 weeks, while complex web applications can take 2-4 months. We provide detailed timelines during our initial consultation.
+
+### Do you provide ongoing maintenance and support?
+
+Yes! We offer comprehensive maintenance packages including security updates, performance optimization, content updates, and technical support. Our support team is available 24/7 for critical issues.
+
+### Can you work with our existing systems?
+
+Absolutely! We specialize in integrating with existing systems, databases, and third-party services. Our team can seamlessly connect your new solution with your current infrastructure.
+
+### What technologies do you specialize in?
+
+We work with modern technologies including React, Node.js, Python, Java, React Native, Flutter, AWS, and more. We choose the best tech stack based on your specific requirements.
+
+### Do you offer custom development solutions?
+
+Yes! Every project is tailored to your specific needs. We don't believe in one-size-fits-all solutions. Our team develops custom features and functionality based on your business requirements.
+
+# Our
+[image: image]
+Creative
+[image: image]
+Process
+
+All of our services are designed to help your business to get noticed.
+
+[image: image]
+
+[image: logo]
+
+1. Connect
+
+## Connect with us via meeting
+
+2. Collaborate
+
+## Outline the scope of the project
+
+3. Create
+
+## Leave the rest to us
+
+## Our guarantees to you.
+We ensure the highest quality of work, with the fastest delivery times.
+
+[image: icon]
+
+### Fast Delivery
+
+1-2 weeks delivery for most projects. Call us for more information.
+
+[image: icon]
+
+### Design & Development
+
+We design and develop your website with the latest technologies and trends.
+
+[image: icon]
+
+### Scalability + Maintenance
+
+We offer maintenance and scalability for all websites.
+
+[image: icon]
+
+### Team of Experts
+
+A team of experts ready to help you, at all times.
+
+[image: icon]
+
+### Secure Building
+
+Safe and secure building practices. To ensure your data is safe.
+
+[image: icon]
+
+### Analytics Tracking
+
+Track your progress with our built in analytics
+
+[image: icon]
+
+### Dynamic Websites
+
+We build dynamic solutions that are easy to manage.
+
+[image: icon]
+
+### 24/7 Support
+
+We offer 24/7 support for all our clients. Call us for more information.
+
+[image: icon]
+
+### Affordable Pricing
+
+Affordable pricing for all our clients.
+
+Let's make things happen
+
+Contact us today to learn more about how our digital marketing services can help your business grow and succeed online.
+Book a Call
+
+[image: proposal illustration]
+
+#
+[image: image]
+
++916379164226
+
+admin@zeazh.com
+
+## Resources
+
+- Service
+
+- Internship
+
+- Showcase
+
+- Service
+
+## Follow us
+
+- Linked IN
+
+- Instagram
+
+## Legal
+
+- Privacy Policy
+
+- Terms & Conditions
+
+© 2024 zeazh™. All Rights Reserved.
+Facebook page Discord community Twitter page GitHub account Dribbble account
+
+© 2025 Zeazh. All Rights Reserved.Privacy Policy
+
+
+######################################################################
+# PAGE: /showcase
+# FILE: showcase.txt
+# URL:  https://zeazhsite-git-main-sheikxms-projects.vercel.app/showcase
+######################################################################
+
+TITLE: Zeazh: Your Go-To Partner for Website Development, CRM, ERP, and SEO Excellence
+DESCRIPTION: streamline and Grow with Zeazh: Websites, CRM, ERP, and SEO Services
+
+======================================================================
+
+[image: Zeazh Logo]
+Zeazh
+InternshipShowcaseServicesCourse
+Career
+UI/UX Developer InternFull Stack Developer InternContent Writing Intern
+
+Book a call
+
+# Innovative Technology Solutions That Transform Businesses
+
+Explore our portfolio of cutting-edge projects and successful partnerships with leading technology companies
+
+FeaturedTechnologyPartners
+
+### Design Tech Innovation Solutions
+
+4.8/5.0
+Visit Website
+
+Full-Stack Development & UI/UX
+
+### Complete Digital Solutions Platform
+
+A comprehensive digital agency platform offering web development, UI/UX design, SEO optimization, and internship training programs.
+
+#### Technologies Used
+
+ReactNext.jsNode.jsMongoDBTailwind CSS
+
+#### Key Features
+
+Responsive Web Design
+
+SEO Optimization
+
+Mobile Development
+
+UI/UX Design Services
+
+Internship Training Platform
+
+Portfolio Management
+
+15+
+
+Projects
+
+25+
+
+Clients
+
+4.8★
+
+Rating
+
+### Nipix Technology
+
+4.6/5.0
+Visit Website
+
+Educational Technology Platform
+
+### Next-Gen Learning & Innovation Hub
+
+An innovative education technology platform focused on hands-on learning through AI, IoT, and Robotics with real-world project implementation.
+
+#### Technologies Used
+
+PythonJavaC++ArduinoFlutterFirebase
+
+#### Key Features
+
+Interactive Course Platform
+
+Workshop Management System
+
+Student Ambassador Program
+
+Project-Based Learning
+
+Campus Integration
+
+Certificate Generation
+
+6+
+
+Courses
+
+500+
+
+Students
+
+4.6★
+
+Rating
+
+### GOFS Technology
+
+4.9/5.0
+Visit Website
+
+Enterprise Solutions
+
+### Custom Enterprise Development
+
+Specialized in creating robust enterprise solutions with cutting-edge technology stack and scalable architecture.
+
+#### Technologies Used
+
+JavaSpring BootReactAngularMicroservicesAWS
+
+#### Key Features
+
+Enterprise Architecture
+
+Cloud Solutions
+
+Microservices Development
+
+API Integration
+
+Data Analytics
+
+Security Implementation
+
+50+
+
+Projects
+
+30+
+
+Clients
+
+4.9★
+
+Rating
+
+Services&Capabilities
+
+### Design Tech Solutions
+
+- Full-Stack Web Development
+
+- UI/UX Design Services
+
+- SEO Optimization
+
+- Mobile App Development
+
+- Training Programs
+
+### Nipix Technology
+
+- Educational Platform Development
+
+- AI & IoT Training
+
+- Campus Workshop Programs
+
+- Student Ambassador Network
+
+- Project-Based Learning
+
+### GOFS Technology
+
+- Enterprise Solutions
+
+- Cloud Architecture
+
+- Microservices Development
+
+- DevOps Implementation
+
+- Security & Performance
+
+WhatOurPartnersSay
+
+"This team provided outstanding service! The website exceeded our expectations in both design and performance."
+
+DK
+
+DhakshnaMoorthy K
+
+Deena Industrial, Owner
+
+"A seamless experience from start to finish. They truly understand UI/UX and deliver exceptional results."
+
+V
+
+Vinoth
+
+VSFitness, Owner
+
+"Don't just learn. Build. Break. Understand. Innovate. That's the Nipix way - exceptional training and results."
+
+NT
+
+Nipix Team
+
+Education Innovation
+
+Let's make things happen
+
+Contact us today to learn more about how our digital marketing services can help your business grow and succeed online.
+Book a Call
+
+[image: proposal illustration]
+
+#
+[image: image]
+
++916379164226
+
+admin@zeazh.com
+
+## Resources
+
+- Service
+
+- Internship
+
+- Showcase
+
+- Service
+
+## Follow us
+
+- Linked IN
+
+- Instagram
+
+## Legal
+
+- Privacy Policy
+
+- Terms & Conditions
+
+© 2024 zeazh™. All Rights Reserved.
+Facebook page Discord community Twitter page GitHub account Dribbble account
+
+© 2025 Zeazh. All Rights Reserved.Privacy Policy
+
+
+######################################################################
+# PAGE: /internship
+# FILE: internship.txt
+# URL:  https://zeazhsite-git-main-sheikxms-projects.vercel.app/internship
+######################################################################
+
+TITLE: Zeazh: Your Go-To Partner for Website Development, CRM, ERP, and SEO Excellence
+DESCRIPTION: streamline and Grow with Zeazh: Websites, CRM, ERP, and SEO Services
+
+======================================================================
+
+[image: Zeazh Logo]
+Zeazh
+InternshipShowcaseServicesCourse
+Career
+UI/UX Developer InternFull Stack Developer InternContent Writing Intern
+
+Book a call
+
+# Our Internship Training Program
+
+our structured internship program crafted to take you from learner to industry-ready professional with personalized mentorship, live training, and real-world tasks.
+
+Enroll Now
+
+#
+FlexibleYetStructured
+
+Our Training model offers flexibility without sacrificing discipline enabling you to learn effectively while managing other priorities.
+
+RoadmapofInternshipJourney
+
+We ensure the highest quality of work, with the fastest delivery times.
+
+[image: Responsive GIF]
+
+Get Started - Join Now
+
+#
+TheInternshipThatChangesEverything
+
+Unlock your full potential with hands-on experience, expert mentorship, and industry connections – all while keeping your budget happy!
+
+[image: image]
+
+# Get Certified. Get Recognized.
+
+Receive a Course Certificate, Internship Certificate, and a Letter of Recommendation to highlight your achievement.
+
+[image: image]
+
+# Career Support You Can Rely On
+
+From resume building to LinkedIn profile enhancement — we help you position yourself for real-world opportunities.
+
+[image: image]
+
+# Mentorship & Guidance
+
+Our mentors work closely with you through both stages — learning and training — offering personalized feedback and career advice.
+
+[image: image]
+
+# Hands-On Project-Based Learning
+
+Apply your knowledge in real-world projects and task-based sprints designed to prepare you for industry work.
+
+[image: image]
+
+# Industry-Ready Curriculum
+
+We cover exactly what employers seek — combining fundamentals with job-oriented skill development and practice.
+
+[image: image]
+
+# Your Stepping Stone to the Future
+
+This isn’t just an internship. It’s a structured journey to turn your potential into proven performance.
+
+#
+FromCodeNewbietoStackJedi
+
+- ➤GitHub (from basics to advanced workflows)
+
+- ➤HTML & CSS for pixel‑perfect, semantic UI design
+
+- ➤JavaScript for interactive, dynamic behavior
+
+- ➤React for component‑driven front‑end development
+
+- ➤Python fundamentals and scripting
+
+- ➤FastAPI for high‑performance back‑end APIs
+
+- ➤SQL & MongoDB with Python ORMs
+
+- ➤Docker & Kubernetes for scalable deployment
+
+# Frequently Asked Questions
+
+All your questions answered. Still confused? Reach out to us on WhatsApp or via our website.
+
+#### What is included in this internship + course program?
+
+You'll go through structured training: 30 days of live and recorded classes with assignments and interactive sessions, followed by 30+ days of real-time project sprints with daily tasks and meetings.
+
+#### What technologies will I learn?
+
+You'll master GitHub, HTML, CSS, JavaScript, React, Python, FastAPI, SQL, MongoDB (via ORMs), Docker, and Kubernetes — preparing you to build full-stack apps confidently.
+
+#### What do I receive after completion?
+
+You'll get a Course Completion Certificate, Internship Certificate, and a Letter of Recommendation. We also help with resume building and LinkedIn profile optimization.
+
+#### How is the training conducted?
+
+We use a blended model: Live classes for 30 days (also recorded), followed by daily sprint-based project training. This structure helps you apply what you learn, just like in real jobs.
+
+#### Is this a paid program?
+
+Yes, the total program fee is just ₹2000 — which includes the full course, internship training, certificates, mentorship, and career support.
+
+#### Will I get placement support?
+
+Yes, we provide career guidance through resume prep, LinkedIn profile building, mock interviews, and referrals for opportunities through our growing partner network.
+
+#### Do I need prior experience to join?
+
+No prior experience is required. Whether you're from a CS background or not, we train you from basics to advanced with full support at every step.
+
+#### How do I enroll?
+
+You can enroll directly via our website at https://zeazh.com/internship/PaymentForm or contact us through WhatsApp for help.
+
+ProgramStatistics
+
++
+
+Students Trained
+
+%
+
+Success Rate
+
+Weeks Duration
+
+/7
+
+Support Available
+
+#
+[image: image]
+
++916379164226
+
+admin@zeazh.com
+
+## Resources
+
+- Service
+
+- Internship
+
+- Showcase
+
+- Service
+
+## Follow us
+
+- Linked IN
+
+- Instagram
+
+## Legal
+
+- Privacy Policy
+
+- Terms & Conditions
+
+© 2024 zeazh™. All Rights Reserved.
+Facebook page Discord community Twitter page GitHub account Dribbble account
+
+© 2025 Zeazh. All Rights Reserved.Privacy Policy
+
+[image: WhatsApp]
+
+
+######################################################################
+# PAGE: /meeting
+# FILE: meeting.txt
+# URL:  https://zeazhsite-git-main-sheikxms-projects.vercel.app/meeting
+######################################################################
+
+TITLE: Zeazh: Your Go-To Partner for Website Development, CRM, ERP, and SEO Excellence
+DESCRIPTION: streamline and Grow with Zeazh: Websites, CRM, ERP, and SEO Services
+
+======================================================================
+
+[image: Zeazh Logo]
+Zeazh
+InternshipShowcaseServicesCourse
+Career
+UI/UX Developer InternFull Stack Developer InternContent Writing Intern
+
+Book a call
+
+# Let's Meet
+
+We are always excited to meet new people and discuss new projects. Please feel free to book a meeting with us.
+
+### Development + Design
+
+Turn your ideas into reality with our development and design services.
+
+### Free Consultation
+
+Get expert advice on how to improve your business and increase your online presence.
+
+### Technical Support
+
+Get technical support for your website or application.
+
+
+######################################################################
+# PAGE: /career/fullstackdeveloperintern
+# FILE: career__fullstackdeveloperintern.txt
+# URL:  https://zeazhsite-git-main-sheikxms-projects.vercel.app/career/fullstackdeveloperintern
+######################################################################
+
+TITLE: Zeazh: Your Go-To Partner for Website Development, CRM, ERP, and SEO Excellence
+DESCRIPTION: streamline and Grow with Zeazh: Websites, CRM, ERP, and SEO Services
+
+======================================================================
+
+[image: Zeazh Logo]
+Zeazh
+InternshipShowcaseServicesCourse
+Career
+UI/UX Developer InternFull Stack Developer InternContent Writing Intern
+
+Book a call
+
+# Full Stack Developer Intern
+
+Join our team as a Full Stack Developer Intern and contribute to building innovative solutions.
+
+## About the Internship
+
+We are looking for a motivated and driven Full Stack Developer Intern to join our dynamic team. In this role, you will have the opportunity to work on real-world projects and contribute to building full-stack web applications using modern technologies.
+
+## Key Responsibilities
+
+- Collaborate with front-end and back-end developers to create full-stack applications.
+
+- Write clean, maintainable, and efficient code using frameworks such as React, Node.js, and Express.js.
+
+- Work with databases like MongoDB, PostgreSQL, and MySQL to design and manage data structures.
+
+- Participate in code reviews and provide constructive feedback.
+
+- Fix bugs and optimize application performance.
+
+## Required Skills and Qualifications
+
+- Basic understanding of web development concepts.
+
+- Familiarity with front-end technologies like HTML, CSS, and JavaScript (React, Vue.js, or Angular).
+
+- Experience with back-end technologies like Node.js and Express.js.
+
+- Familiarity with version control systems such as Git and GitHub.
+
+- Good communication skills and the ability to work in a team.
+
+- Willingness to learn and adapt to new technologies.
+
+- Currently pursuing or recently completed a degree in Computer Science, Software Engineering, or a related field.
+
+Apply
+If you are passionate about web development and want to gain hands-on experience, we would love to hear from you. Please submit your resume and portfolio to careers@zeazh.com with the subject line "Full Stack Developer Intern Application".
+
+[image: Random stock image 1]
+
+### Rubbish Brothers
+
+[image: Random stock image 2]
+
+### Atlas Massage
+
+[image: Random stock image 3]
+
+### Canadian Security Solutions
+
+[image: Random stock image 4]
+
+### Flight 9
+
+Let's make things happen
+
+Contact us today to learn more about how our digital marketing services can help your business grow and succeed online.
+Book a Call
+
+[image: proposal illustration]
+
+#
+[image: image]
+
++916379164226
+
+admin@zeazh.com
+
+## Resources
+
+- Service
+
+- Internship
+
+- Showcase
+
+- Service
+
+## Follow us
+
+- Linked IN
+
+- Instagram
+
+## Legal
+
+- Privacy Policy
+
+- Terms & Conditions
+
+© 2024 zeazh™. All Rights Reserved.
+Facebook page Discord community Twitter page GitHub account Dribbble account
+
+© 2025 Zeazh. All Rights Reserved.Privacy Policy
+
+
+######################################################################
+# PAGE: /career/fullstackdeveloperintern/apply
+# FILE: career__fullstackdeveloperintern__apply.txt
+# URL:  https://zeazhsite-git-main-sheikxms-projects.vercel.app/career/fullstackdeveloperintern/apply
+######################################################################
+
+TITLE: Zeazh: Your Go-To Partner for Website Development, CRM, ERP, and SEO Excellence
+DESCRIPTION: streamline and Grow with Zeazh: Websites, CRM, ERP, and SEO Services
+
+======================================================================
+
+[image: Zeazh Logo]
+Zeazh
+InternshipShowcaseServicesCourse
+Career
+UI/UX Developer InternFull Stack Developer InternContent Writing Intern
+
+Book a call
+
+# Full Stack Internship Application Form
+
+## Personal Information:
+
+First Name
+
+Last Name
+
+Email
+
+Phone Number
+
+Address
+
+## Education Information:
+
+University/College Name
+
+Degree Program
+
+Expected Graduation Year
+Select a year20242025202620272028202920302031
+
+GPA (if applicable)
+
+## Internship Details:
+
+Internship Position Applied For
+
+Preferred Start Date
+
+Duration
+
+Availability
+
+## Upload Resume:
+
+Resume
+
+## Declaration:
+
+Signature
+
+I agree to the terms and conditions.
+
+Submit
+
+#
+[image: image]
+
++916379164226
+
+admin@zeazh.com
+
+## Resources
+
+- Service
+
+- Internship
+
+- Showcase
+
+- Service
+
+## Follow us
+
+- Linked IN
+
+- Instagram
+
+## Legal
+
+- Privacy Policy
+
+- Terms & Conditions
+
+© 2024 zeazh™. All Rights Reserved.
+Facebook page Discord community Twitter page GitHub account Dribbble account
+
+© 2025 Zeazh. All Rights Reserved.Privacy Policy
+
+
+######################################################################
+# PAGE: /career/ui-ux-developer-intern
+# FILE: career__ui-ux-developer-intern.txt
+# URL:  https://zeazhsite-git-main-sheikxms-projects.vercel.app/career/ui-ux-developer-intern
+######################################################################
+
+TITLE: 404: This page could not be found.
+DESCRIPTION: streamline and Grow with Zeazh: Websites, CRM, ERP, and SEO Services
+
+======================================================================
+
+# 404
+
+## This page could not be found.
+
+
+######################################################################
+# PAGE: /career/content-writing-intern
+# FILE: career__content-writing-intern.txt
+# URL:  https://zeazhsite-git-main-sheikxms-projects.vercel.app/career/content-writing-intern
+######################################################################
+
+TITLE: 404: This page could not be found.
+DESCRIPTION: streamline and Grow with Zeazh: Websites, CRM, ERP, and SEO Services
+
+======================================================================
+
+# 404
+
+## This page could not be found.
+
+
+######################################################################
+# PAGE: /privacypolicy
+# FILE: privacypolicy.txt
+# URL:  https://zeazhsite-git-main-sheikxms-projects.vercel.app/privacypolicy
+######################################################################
+
+TITLE: Zeazh: Your Go-To Partner for Website Development, CRM, ERP, and SEO Excellence
+DESCRIPTION: streamline and Grow with Zeazh: Websites, CRM, ERP, and SEO Services
+
+======================================================================
+
+[image: Zeazh Logo]
+Zeazh
+InternshipShowcaseServicesCourse
+Career
+UI/UX Developer InternFull Stack Developer InternContent Writing Intern
+
+Book a call
+
+# PRIVACY POLICY
+
+Last Updated: 01/01/2024
+
+Welcome to zeazh.com. Your privacy is important to us. This Privacy Policy explains how zeazh collects, uses, and discloses your personal information when you use our Service.
+
+## 1. INFORMATION WE COLLECT
+
+### 1.1 Personal Information
+
+We may collect personal information such as your name, email address, and other contact details when you interact with our Service.
+
+### 1.2 Usage Data
+
+We may also collect information about how you access and use the Service, including your IP address, browser type, and operating system.
+
+## 2. HOW WE USE YOUR INFORMATION
+
+We may use your personal information for various purposes, including to provide and maintain our Service, improve user experience, and send you updates and promotional content.
+
+## 3. DISCLOSURE OF YOUR INFORMATION
+
+We may share your personal information with third parties for purposes such as analytics, advertising, and other service providers. However, we will not sell, rent, or trade your personal information to third parties.
+
+## 4. COOKIES
+
+We use cookies and similar tracking technologies to track the activity on our Service and store certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.
+
+## 5. SECURITY
+
+We take reasonable steps to protect your personal information; however, no method of transmission over the internet or electronic storage is 100% secure.
+
+## 6. CHANGES TO THIS PRIVACY POLICY
+
+We may update our Privacy Policy from time to time. Any changes will be posted on this page, and the effective date will be updated.
+
+## 7. CONTACT US
+
+If you have any questions or concerns about our Privacy Policy, please contact us at zeazhofficial@gmail.com.
+
+zeazh
+14/1 Indira Nagar,
+Ilayangudi Road,
+Sivaganga
+zeazhofficial@gmail.com
+
+#
+[image: image]
+
++916379164226
+
+admin@zeazh.com
+
+## Resources
+
+- Service
+
+- Internship
+
+- Showcase
+
+- Service
+
+## Follow us
+
+- Linked IN
+
+- Instagram
+
+## Legal
+
+- Privacy Policy
+
+- Terms & Conditions
+
+© 2024 zeazh™. All Rights Reserved.
+Facebook page Discord community Twitter page GitHub account Dribbble account
+
+© 2025 Zeazh. All Rights Reserved.Privacy Policy
+
+
+######################################################################
+# PAGE: /tos
+# FILE: tos.txt
+# URL:  https://zeazhsite-git-main-sheikxms-projects.vercel.app/tos
+######################################################################
+
+TITLE: Zeazh: Your Go-To Partner for Website Development, CRM, ERP, and SEO Excellence
+DESCRIPTION: streamline and Grow with Zeazh: Websites, CRM, ERP, and SEO Services
+
+======================================================================
+
+[image: Zeazh Logo]
+Zeazh
+InternshipShowcaseServicesCourse
+Career
+UI/UX Developer InternFull Stack Developer InternContent Writing Intern
+
+Book a call
+
+# TERMS OF SERVICE AGREEMENT
+
+Last Updated: 01/01/2024
+
+## 1. ACCEPTANCE OF TERMS
+
+By accessing or using this website zeazh.com and any related services, you agree to abide by and be bound by these Terms of Service.
+
+## 2. USE OF THE SERVICE
+
+### 2.1 Eligibility
+
+You must be at least 8 years old to use this Service.
+
+### 2.2 User Account
+
+You are responsible for maintaining the confidentiality of your account and password and for restricting access to your computer. You agree to accept responsibility for all activities that occur under your account.
+
+## 3. USER CONTENT
+
+### 3.1 Responsibility
+
+You are solely responsible for the content you post on the Site. You agree not to post User Content that violates any applicable laws or regulations.
+
+### 3.2 License
+
+By submitting User Content, you grant zeazh a worldwide, non-exclusive, royalty-free license to use, reproduce, modify, adapt, publish, translate, create derivative works from, distribute, and display such content.
+
+## 4. INTELLECTUAL PROPERTY
+
+All content and materials available on the Site, including but not limited to trademarks, logos, and images, are the intellectual property of zeazh and are protected by applicable copyright and trademark law.
+
+## 5. TERMINATION
+
+zeazh reserves the right to terminate or suspend your account and access to the Service for any reason, without notice.
+
+## 6. DISCLAIMER OF WARRANTIES
+
+The Service is provided "as is" without any warranties, expressed or implied.
+
+## 7. LIMITATION OF LIABILITY
+
+In no event shall zeazh be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly.
+
+## 8. GOVERNING LAW
+
+These Terms of Service are governed by and construed in accordance with the laws of zeazh.
+
+## 9. CHANGES TO TERMS
+
+zeazh reserves the right to modify or replace these Terms of Service at any time. Your continued use of the Service after any changes constitutes acceptance of the new Terms.
+
+## CONTACT US
+
+If you have any questions or concerns about these Terms of Service, please contact us at zeazhofficial@gmail.com.
+
+zeazh
+14/1 Indira Nagar,
+Ilayangudi Road,
+Sivaganga
+zeazhofficial@gmail.com
+
+#
+[image: image]
+
++916379164226
+
+admin@zeazh.com
+
+## Resources
+
+- Service
+
+- Internship
+
+- Showcase
+
+- Service
+
+## Follow us
+
+- Linked IN
+
+- Instagram
+
+## Legal
+
+- Privacy Policy
+
+- Terms & Conditions
+
+© 2024 zeazh™. All Rights Reserved.
+Facebook page Discord community Twitter page GitHub account Dribbble account
+
+© 2025 Zeazh. All Rights Reserved.Privacy Policy

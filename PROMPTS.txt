@@ -1,0 +1,277 @@
+===============================================================================
+OXOHIVE — ASSET GENERATION PROMPTS
+Paste these into Google Flow (video) and Gemini/Imagen (stills).
+Everything here is matched to the site's actual sections and palette.
+===============================================================================
+
+-------------------------------------------------------------------------------
+BEFORE YOU START — READ THIS, IT SAVES CREDITS
+-------------------------------------------------------------------------------
+
+Your plan: Google AI Pro via Jio = 1,000 Flow credits/month.
+
+  Veo 3 Fast     ~20 credits per 8s clip   <- use for ALL test runs
+  Veo 3 Quality  ~100 credits per 8s clip  <- use ONLY for the final take
+  Imagen stills  effectively free on Pro   <- does NOT touch Flow credits
+
+RULE: never run a prompt on Quality first. Run it on Fast, look at it,
+adjust the prompt, and only then spend 100 credits on the keeper.
+
+Full plan below = 6 videos + 6 stills.
+  6 Fast test runs      = 120 credits
+  6 Quality finals      = 600 credits
+  stills                = 0 credits
+  TOTAL                 ~720 of your 1,000 monthly credits
+
+If credits get tight, generate V1, V2 and V6 only (the three that matter most)
+and use stills for the rest.
+
+-------------------------------------------------------------------------------
+THE LOOK — THIS IS WHY EVERY PROMPT SOUNDS SIMILAR
+-------------------------------------------------------------------------------
+
+The whole site runs on ONE idea, taken from your reference photo:
+
+    a cool, sharp screen sitting inside a warm, soft room
+
+Warm = honey amber, oak wood, cream, low tungsten light, out-of-focus depth.
+Cool = near-black screens with blue/green/cyan syntax colour.
+
+Palette to keep saying in prompts:
+    honey amber   #E5A445     (the lamp — this is the brand colour)
+    oak           #C6A079
+    cream         #F3EBDF
+    espresso      #1D1814
+    screen black  #13161B
+    cool daylight #CFDDE4
+
+ALWAYS end every prompt with the NEGATIVE line. AI video/image models love
+adding garbled fake text and logos, and that will ruin the shot.
+
+-------------------------------------------------------------------------------
+WHERE THE FILES GO
+-------------------------------------------------------------------------------
+
+Download and drop into:  public/media/
+
+Name them EXACTLY like this or the site will not pick them up:
+
+    hero-loop.mp4         V1
+    tech-loop.mp4         V2
+    process-loop.mp4      V3
+    work-01.mp4           V4
+    internship-loop.mp4   V5
+    cta-loop.mp4          V6
+
+    og-share.jpg          S1
+    work-01.jpg           S2
+    work-02.jpg           S3
+    work-03.jpg           S4
+    internship.jpg        S5
+    team.jpg              S6
+
+Tell me when they are in and I will wire them into the components.
+
+===============================================================================
+VIDEO — GOOGLE FLOW (Veo 3.1)
+Settings for all: 16:9, 8 seconds, no audio needed (site plays muted)
+===============================================================================
+
+-------------------------------------------------------------------------------
+V1 — HERO  (highest priority. If you only make one, make this one.)
+-------------------------------------------------------------------------------
+Goes behind the headline, under the 3D honeycomb layer. Must be calm and
+slow — it sits behind text, so nothing can grab attention.
+
+PROMPT:
+Slow cinematic push-in across a warm modern workspace at golden hour. A dark
+laptop sits open on a light oak desk, its screen glowing cool blue-white in a
+room lit by warm amber tungsten light. Soft bokeh in the background suggests a
+cafe interior with wooden furniture and green plants, people blurred beyond
+recognition. Dust motes drift through a shaft of window light. Extremely shallow
+depth of field, anamorphic lens, gentle handheld drift, no cuts. Colour grade:
+honey amber highlights, deep espresso shadows, one cool blue screen as the only
+cold element. Photorealistic, cinematic, unhurried.
+NEGATIVE: no text, no writing, no letters, no logos, no watermarks, no brand
+names, no readable screen content, no faces in focus, no fast motion, no zoom
+punches, no lens flare.
+
+-------------------------------------------------------------------------------
+V2 — TECHNOLOGY SECTION  (dark band)
+-------------------------------------------------------------------------------
+This one lives on the near-black band. Keep it dark — it must not brighten.
+
+PROMPT:
+Macro cinematic shot gliding slowly over a dark computer screen displaying
+abstract flowing code, rendered as soft glowing lines of blue, cyan, green and
+purple light against near-black. The light is out of focus and painterly rather
+than literal, like city lights through rain. A faint warm amber glow bleeds in
+from the left edge, as if a lamp sits just off camera. Slow lateral drift,
+extremely shallow focus, subtle film grain. Dark, quiet, technical.
+NEGATIVE: no readable text, no letters, no code that can be read, no logos, no
+watermarks, no UI elements, no cursor, no bright whites, no flashing.
+
+-------------------------------------------------------------------------------
+V3 — PROCESS SECTION
+-------------------------------------------------------------------------------
+Shows craft and sequence. Hands working, nothing branded.
+
+PROMPT:
+Overhead cinematic shot of hands moving slowly across a warm oak desk,
+arranging blank paper cards and sketching soft pencil lines on plain paper.
+Warm amber desk lamp light from the upper left, cool daylight from a window on
+the right. A cup of black coffee sits at the edge of frame, plain unbranded
+white ceramic. Shallow depth of field, slow deliberate movement, no cuts.
+Colour: cream paper, oak wood, honey amber light, deep shadow.
+NEGATIVE: no text, no writing, no readable words, no letters, no logos, no
+watermarks, no brand names on the cup, no faces, no fast motion.
+
+-------------------------------------------------------------------------------
+V4 — WORK SECTION  (optional — stills S2-S4 can cover this instead)
+-------------------------------------------------------------------------------
+PROMPT:
+Slow orbit around a dark tablet and phone lying on a warm oak surface, their
+screens glowing with soft abstract dashboard shapes in cool blue and cyan —
+blurred rectangles and curves suggesting charts, never legible. Warm amber
+rim light catches the edges of the devices. Background falls into deep
+espresso shadow with soft bokeh. Cinematic product photography in motion,
+extremely shallow focus.
+NEGATIVE: no text, no numbers, no readable charts, no logos, no watermarks, no
+brand marks, no hands, no reflections of people.
+
+-------------------------------------------------------------------------------
+V5 — INTERNSHIP SECTION
+-------------------------------------------------------------------------------
+Needs warmth and people, but faces must stay soft — you do not have model
+releases for AI-generated faces used as if they were your real interns.
+
+PROMPT:
+Warm cinematic shot inside a bright modern studio workspace, two people seated
+side by side at a long oak table working on laptops, seen from behind and to
+the side so faces are not visible. Large windows fill the room with soft cool
+daylight while a warm amber pendant lamp glows overhead. Green plants and
+wooden shelves blur into the background. Slow gentle dolly move to the right,
+shallow depth of field, natural and unposed.
+NEGATIVE: no text, no logos, no watermarks, no readable screens, no visible
+faces, no direct eye contact, no stock-photo posing, no fast motion.
+
+-------------------------------------------------------------------------------
+V6 — CTA SECTION  (dark band, closes the page)
+-------------------------------------------------------------------------------
+PROMPT:
+Very slow cinematic drift through warm amber light in near darkness. Abstract
+hexagonal shapes catch the light faintly at the edges of frame, like a
+honeycomb structure half-hidden in shadow, suggested rather than shown. Dust
+and soft particles float through a single warm shaft of light. Deep espresso
+blacks, honey amber highlights, one faint cool blue accent far in the
+background. Meditative, premium, almost still.
+NEGATIVE: no text, no logos, no watermarks, no bees, no insects, no honey
+dripping, no literal beehive, no cartoon shapes, no fast motion, no flashing.
+
+===============================================================================
+STILLS — GEMINI / IMAGEN  (free on your Pro plan, no Flow credits)
+===============================================================================
+
+-------------------------------------------------------------------------------
+S1 — OG SHARE IMAGE  (1200x630, what shows on WhatsApp/LinkedIn/X)
+-------------------------------------------------------------------------------
+PROMPT:
+Wide cinematic photograph of a warm modern workspace at golden hour. A dark
+laptop glows cool blue on a light oak desk, warm amber lamp light from the
+upper left, soft out-of-focus cafe interior behind with wooden chairs and
+green plants. Deep espresso shadows, honey amber highlights, cream surfaces.
+Generous empty space in the left third of the frame for text overlay.
+Photorealistic, shallow depth of field, 1200x630 aspect.
+NEGATIVE: no text, no logos, no watermarks, no people, no branded cups, no
+readable screen content.
+
+-------------------------------------------------------------------------------
+S2 — WORK CARD 1: Digital Solutions Platform  (4:3)
+-------------------------------------------------------------------------------
+PROMPT:
+Dark cinematic product still of a laptop on a warm oak desk, screen showing an
+abstract blurred dashboard in cool blue and cyan — soft glowing rectangles and
+curved lines suggesting analytics, none of it legible. Warm amber rim light on
+the laptop edges, deep espresso background, shallow depth of field.
+NEGATIVE: no text, no numbers, no readable UI, no logos, no watermarks.
+
+-------------------------------------------------------------------------------
+S3 — WORK CARD 2: Learning & Innovation Hub  (4:3)
+-------------------------------------------------------------------------------
+PROMPT:
+Dark cinematic still of a tablet propped on a warm oak surface beside a small
+circuit board and a coil of wire, all lit by warm amber light from one side and
+cool blue screen glow from the other. Shallow depth of field, deep espresso
+background, soft bokeh. Suggests hands-on electronics and robotics learning.
+NEGATIVE: no text, no labels, no readable screens, no logos, no watermarks, no
+hands, no faces.
+
+-------------------------------------------------------------------------------
+S4 — WORK CARD 3: Inventory & Finance Suite  (4:3)
+-------------------------------------------------------------------------------
+PROMPT:
+Dark cinematic still of two monitors on a warm oak desk, both showing abstract
+blurred data visualisations in cool blue, cyan and faint amber — glowing bars
+and lines, nothing readable. Warm amber desk lamp just out of frame casts a
+soft pool of light. Deep espresso shadows, shallow depth of field, orderly and
+calm.
+NEGATIVE: no text, no numbers, no spreadsheets, no readable charts, no logos,
+no watermarks.
+
+-------------------------------------------------------------------------------
+S5 — INTERNSHIP  (16:9)
+-------------------------------------------------------------------------------
+PROMPT:
+Warm photograph of an open notebook and a laptop on a long oak table in a
+bright studio, soft cool daylight from large windows, warm amber pendant lamp
+above. Green plants and wooden shelving blurred in the background. Empty
+chairs suggest people just stepped away. Inviting, calm, unposed.
+NEGATIVE: no text, no handwriting, no readable notebook pages, no logos, no
+watermarks, no people, no faces.
+
+-------------------------------------------------------------------------------
+S6 — TEAM / ABOUT  (16:9)
+-------------------------------------------------------------------------------
+PROMPT:
+Warm wide photograph of a modern studio interior — oak slat ceiling, glass
+partitions, green plants, soft curved seating, large windows with cool
+daylight, warm amber accent lighting. Empty of people. Architectural interior
+photography, natural light, calm and premium.
+NEGATIVE: no text, no signage, no logos, no watermarks, no people, no brand
+names.
+
+===============================================================================
+IF A RESULT COMES OUT WRONG
+===============================================================================
+
+Garbled fake text appeared
+  -> add to NEGATIVE: no text, no letters, no symbols, no signage, no captions
+
+Too bright / washed out
+  -> add: low key lighting, deep shadows, underexposed, moody
+
+Too orange, looks like a filter
+  -> replace "honey amber" with "warm tungsten" and add: natural colour grade,
+     not oversaturated
+
+Camera moves too fast
+  -> add: extremely slow camera movement, almost still, locked-off tripod feel
+
+Faces appear when you did not want them
+  -> add: no people, no faces, no humans, empty room
+
+Looks like generic stock footage
+  -> add: shot on 35mm film, subtle grain, imperfect framing, candid
+
+===============================================================================
+LEGAL — ONE LINE, BUT IT MATTERS
+===============================================================================
+
+Do not generate anything showing a real brand (Starbucks cups, visible logos,
+recognisable products). Your original reference images had a Starbucks logo in
+them — that is exactly what these NEGATIVE lines are there to prevent.
+
+Do not present AI-generated people as your real team or real interns. Use the
+empty-room shots for that, or photograph your actual team.
+
+===============================================================================
