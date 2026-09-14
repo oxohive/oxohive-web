@@ -3,7 +3,7 @@
 import { useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { CYAN, HONEY, OAK, hexGeometry } from "../shared";
+import { hexGeometry, LOGO_PALETTE } from "../shared";
 
 /**
  * CTA — scattered cells drawing together into one.
@@ -48,7 +48,7 @@ export default function Converge({
       m.position.set(Math.cos(a) * r, s.tilt * (1 - eased * 0.8), Math.sin(a) * r);
       m.rotation.set(t * 0.4, a, t * 0.25);
       m.scale.setScalar(0.6 + eased * 0.5);
-      (m.material as THREE.MeshStandardMaterial).emissiveIntensity = 0.15 + eased * 0.85;
+      (m.material as THREE.MeshStandardMaterial).emissiveIntensity = 0.1 + eased * 0.25;
     });
   });
 
@@ -63,10 +63,10 @@ export default function Converge({
           geometry={geo}
         >
           <meshStandardMaterial
-            color={i % 4 === 0 ? OAK : HONEY}
+            color={LOGO_PALETTE[i % LOGO_PALETTE.length]}
             roughness={0.3}
             metalness={0.5}
-            emissive={i % 5 === 0 ? CYAN : HONEY}
+            emissive={LOGO_PALETTE[i % LOGO_PALETTE.length]}
             emissiveIntensity={0.2}
             flatShading
           />

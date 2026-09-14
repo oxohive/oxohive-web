@@ -3,6 +3,9 @@
 import { useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
+import { LOGO_PALETTE } from "./shared";
+
+const BRAND_COLORS = LOGO_PALETTE.map((hex) => new THREE.Color(hex));
 
 const HEX = {
   radius: 0.52,
@@ -72,9 +75,9 @@ export default function Honeycomb({
       const near = Math.max(0, 1 - Math.sqrt(dx * dx + dz * dz) / 4.2);
 
       // resting wave + scroll swell + cursor lift
-      const wave = Math.sin(t * 0.85 + c.phase + norm * 3.1) * 0.16;
+      const wave = Math.sin(t * 0.35 + c.phase + norm * 3.1) * 0.10;
       const swell = Math.sin(s * Math.PI) * (1 - norm) * 1.35;
-      const lift = near * near * 1.15;
+      const lift = near * near * 0.55;
 
       dummy.position.set(c.x, wave + swell + lift, c.z);
       dummy.rotation.set(0, Math.PI / 6, 0);
@@ -83,13 +86,15 @@ export default function Honeycomb({
       dummy.updateMatrix();
       m.setMatrixAt(i, dummy.matrix);
 
-      // amber core fading to oak at the rim, hot under the cursor
-      const heat = Math.min(1, near * 1.5 + swell * 0.28);
-      color.setRGB(
-        0.36 + heat * 0.54 - norm * 0.08,
-        0.22 + heat * 0.36 - norm * 0.05,
-        0.09 + heat * 0.12
-      );
+      // A brand gradient that flows across the hive like the process wave.
+      const base = THREE.MathUtils.clamp((c.x / maxDist + 1) / 2, 0, 1);
+      const flow = (base * 0.82 + c.z / maxDist * 0.12 + t * 0.045) % 1;
+      const blend = (flow < 0 ? flow + 1 : flow) * BRAND_COLORS.length;
+      const stop = Math.min(Math.floor(blend), BRAND_COLORS.length - 1);
+      const next = (stop + 1) % BRAND_COLORS.length;
+      color.copy(BRAND_COLORS[stop]).lerp(BRAND_COLORS[next], blend - stop);
+      // glossy crest: cells riding the wave or under the cursor read brighter
+      color.multiplyScalar(1.05 + wave * 1.1 + near * 0.35);
       m.setColorAt(i, color);
     }
 
@@ -101,15 +106,19 @@ export default function Honeycomb({
     <instancedMesh
       ref={mesh}
       args={[geometry, undefined, cells.length]}
-      castShadow
-      receiveShadow
     >
-      <meshStandardMaterial
+      <meshPhysicalMaterial
         vertexColors
-        roughness={0.42}
-        metalness={0.16}
-        emissive="#E5A445"
-        emissiveIntensity={0.13}
+        toneMapped={false}
+        roughness={0.16}
+        metalness={0.28}
+        clearcoat={1}
+        clearcoatRoughness={0.12}
+        reflectivity={0.85}
+        sheen={0.6}
+        sheenColor="#FFFFFF"
+        emissive="#FFFFFF"
+        emissiveIntensity={0.05}
         flatShading
       />
     </instancedMesh>

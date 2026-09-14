@@ -1,29 +1,19 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import { internship } from "@/lib/content";
+import { internship, site } from "@/lib/content";
 import Section from "@/components/ui/Section";
 import SectionHead from "@/components/ui/SectionHead";
 import Reveal from "@/components/ui/Reveal";
 import Button from "@/components/ui/Button";
-
-const SceneFrame = dynamic(() => import("@/components/three/SceneFrame"), { ssr: false });
-const Mentorship = dynamic(() => import("@/components/three/objects/Mentorship"), { ssr: false });
 
 export default function Internship() {
   return (
     <Section id="internship" tone="warm">
       <SectionHead
         eyebrow="Internship"
-        title="From learner to industry-ready."
-        body="A structured programme with live training, personal mentorship, and real project work — flexible enough to fit around everything else you are doing."
+        title="Learn by working on a project."
+        body="A programme combining training, project tasks and feedback from a mentor."
       />
-
-      <div className="pointer-events-none mb-4 h-[280px] w-full sm:h-[340px]">
-        <SceneFrame cameraPosition={[0, 1.8, 6.4]} fov={40}>
-          {(progress) => <Mentorship progress={progress} />}
-        </SceneFrame>
-      </div>
 
       <div className="grid grid-cols-1 items-start gap-[clamp(34px,4vw,56px)] lg:grid-cols-[.85fr_1fr]">
         <Reveal>
@@ -58,7 +48,7 @@ export default function Internship() {
               >
                 <span>
                   <b className="block text-[15.5px] font-semibold">{r.title}</b>
-                  <em className="font-mono text-[11px] uppercase not-italic tracking-[.06em] text-ink-3">
+                  <em className="font-body text-[11px] uppercase not-italic tracking-[.06em] text-ink-3">
                     {r.meta}
                   </em>
                 </span>
@@ -69,7 +59,7 @@ export default function Internship() {
             ))}
 
             <div className="mt-[22px]">
-              <Button href="#contact" arrow full>Enrol now</Button>
+              <Button href={`mailto:${site.email}`} arrow full>Enrol now</Button>
             </div>
           </aside>
         </Reveal>

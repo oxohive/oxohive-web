@@ -41,14 +41,13 @@ export default function HiveCanvas() {
     <div ref={host} style={{ position: "absolute", inset: 0 }} aria-hidden="true">
       <Canvas
         dpr={[1, 1.75]}
-        shadows
         gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
         camera={{ position: [0, 6.5, 9], fov: 42 }}
       >
         <CameraRig scroll={scroll} pointer={pointer} />
         <Lighting />
         <Honeycomb scroll={scroll} pointer={pointer} />
-        <fog attach="fog" args={["#13161B", 12, 30]} />
+        <fog attach="fog" args={["#ffffff", 30, 62]} />
       </Canvas>
     </div>
   );

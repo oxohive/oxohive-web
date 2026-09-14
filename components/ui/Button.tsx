@@ -16,11 +16,11 @@ const base =
 
 const styles = {
   warm: {
-    primary: "bg-ink text-ground border-ink hover:bg-honey hover:border-honey hover:text-[#1D1814]",
+    primary: "brand-button",
     ghost: "bg-transparent text-ink border-line-2 hover:border-ink",
   },
   screen: {
-    primary: "bg-honey text-[#141110] border-honey hover:bg-[#F2B45A] hover:border-[#F2B45A]",
+    primary: "brand-button",
     ghost: "bg-transparent text-screen-ink border-screen-line hover:border-screen-ink-2",
   },
 };
@@ -55,7 +55,7 @@ export default function Button({
     </>
   );
 
-  if (href.startsWith("#") || href.startsWith("mailto:")) {
+  if (href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) {
     return (
       <a className={cls} href={href}>
         {inner}

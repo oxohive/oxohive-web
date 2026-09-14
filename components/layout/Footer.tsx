@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { footerCols, site, social } from "@/lib/content";
 
 export default function Footer() {
@@ -7,17 +8,26 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-9 sm:grid-cols-2 lg:grid-cols-[1.5fr_repeat(3,1fr)]">
           <div>
             <a href={site.url} className="flex items-center gap-2.5 no-underline">
-              <span
-                aria-hidden="true"
-                className="clip-hex grid size-[30px] shrink-0 place-items-center bg-screen font-mono text-[15px] font-bold text-honey"
-              >
-                O
-              </span>
-              <span className="font-display text-xl font-bold tracking-[-.03em]">{site.name}</span>
+              <Image
+                src="/Oxohive_logo.webp"
+                alt={site.name}
+                width={1275}
+                height={970}
+                unoptimized
+                className="h-auto w-[210px] max-w-full object-contain"
+              />
             </a>
             <p className="mt-3.5 mb-[18px] max-w-[36ch] text-[15px] text-ink-2">
               Websites, mobile apps, CRM and ERP systems, and the search work that makes sure
               they get found.
+            </p>
+            <p className="mb-[18px] flex flex-col gap-1 text-[15px]">
+              <a href={`mailto:${site.email}`} className="text-ink-2 no-underline transition-colors hover:text-honey-ink">
+                {site.email}
+              </a>
+              <a href={site.phoneHref} className="text-ink-2 no-underline transition-colors hover:text-honey-ink">
+                {site.phone}
+              </a>
             </p>
             <div className="flex flex-wrap gap-2">
               {social.map((s) => (
@@ -25,7 +35,7 @@ export default function Footer() {
                   key={s.label}
                   href={s.href}
                   rel="noopener"
-                  className="rounded-md border border-line-2 px-[11px] py-[7px] font-mono text-[11px] uppercase tracking-[.06em] text-ink-2 no-underline transition-colors hover:border-ink hover:text-ink"
+                  className="rounded-md border border-line-2 px-[11px] py-[7px] font-body text-[11px] tracking-[.02em] text-ink-2 no-underline transition-colors hover:border-ink hover:text-ink"
                 >
                   {s.label}
                 </a>
@@ -35,7 +45,7 @@ export default function Footer() {
 
           {footerCols.map((col) => (
             <div key={col.title}>
-              <h4 className="mb-3.5 font-mono text-[11px] font-medium uppercase tracking-[.12em] text-ink-3">
+              <h4 className="mb-3.5 font-body text-[11px] font-medium uppercase tracking-[.12em] text-ink-3">
                 {col.title}
               </h4>
               <ul className="m-0 list-none p-0">
@@ -54,7 +64,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-11 flex flex-wrap items-center justify-between gap-3.5 border-t border-line pt-[22px] font-mono text-[11.5px] tracking-[.03em] text-ink-3">
+        <div className="mt-11 flex flex-wrap items-center justify-between gap-3.5 border-t border-line pt-[22px] font-body text-[11.5px] tracking-[.03em] text-ink-3">
           <span>
             &copy; 2026 {site.name} &middot; {site.domain}
           </span>

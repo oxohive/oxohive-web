@@ -14,18 +14,15 @@ export default function SectionHead({
 }) {
   return (
     <Reveal>
-      <div className="mb-[clamp(34px,4vw,52px)] max-w-[62ch]">
+      <div className="mb-[clamp(34px,4vw,52px)] max-w-[920px]">
         <Eyebrow onScreen={onScreen}>{eyebrow}</Eyebrow>
         <h2
-          className={[
-            "mt-4 mb-3.5 text-[clamp(29px,3.7vw,45px)]",
-            onScreen ? "text-screen-ink" : "text-ink",
-          ].join(" ")}
+          className="brand-text mt-4 mb-5 text-[clamp(36px,4.8vw,60px)] font-semibold tracking-[-.035em]"
         >
           {title}
         </h2>
         {body && (
-          <p className={onScreen ? "text-[17.5px] text-screen-ink-2" : "text-[17.5px] text-ink-2"}>
+          <p className={onScreen ? "max-w-[68ch] text-[clamp(17px,1.6vw,20px)] leading-relaxed text-screen-ink-2" : "max-w-[68ch] text-[clamp(17px,1.6vw,20px)] leading-relaxed text-ink-2"}>
             {body}
           </p>
         )}

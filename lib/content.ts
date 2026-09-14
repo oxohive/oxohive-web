@@ -4,10 +4,12 @@ export const site = {
   name: "Oxohive",
   domain: "oxohive.com",
   url: "https://oxohive.com",
-  email: "hello@oxohive.com",
+  email: "contact@oxohive.com",
+  phone: "63791 64226",
+  phoneHref: "tel:+916379164226",
   tagline: "Web, Mobile, ERP & SEO",
   description:
-    "Oxohive builds scalable web platforms, mobile apps, CRM and ERP systems, and runs a structured internship programme. Book a call and get a quote in minutes.",
+    "Websites, mobile apps and business software from Oxohive. We help with design, development and digital marketing.",
 } as const;
 
 export const nav = [
@@ -19,19 +21,18 @@ export const nav = [
 ] as const;
 
 export const hero = {
-  /* PLACEHOLDER: replace with real figures before launch */
-  rating: "4.9 average · 200+ reviews",
-  headlineLead: "Drive success in the digital era with",
-  headlineBrand: "Oxohive",
-  headlineTail: "by your side.",
+  eyebrow: "Design, development & digital marketing",
+  headlineLead: "Websites, apps and software.",
+  headlineBrand: "Built around your business.",
+  headlineTail: "",
   lead:
-    "We build the web platforms, mobile apps, CRM and ERP systems that businesses actually run on — then make sure people can find them. Tell us about your project and get a quote in minutes.",
+    "Need a new website, an app, or a better way to manage your work? We help you plan it, design it and build it.",
   disciplines: ["Design", "Development", "Marketing", "Strategy"],
 } as const;
 
 export type Service = {
   num: string;
-  kind: "BUILD" | "GROW";
+  kind: "BUILD" | "GROW" | "AUTOMATE" | "OPERATE";
   title: string;
   body: string;
   tags: string[];
@@ -40,45 +41,45 @@ export type Service = {
 export const services: Service[] = [
   {
     num: "01",
-    kind: "BUILD",
-    title: "Web Design & Development",
-    body: "Take your business further with sites and platforms built to be fast, accessible, and genuinely pleasant to use.",
-    tags: ["Next.js", "Spring Boot", "Postgres"],
+    kind: "AUTOMATE",
+    title: "AI Automation",
+    body: "Reduce repetitive work with AI assistants and connected workflows. We automate document processing, customer enquiries and routine tasks across your business tools.",
+    tags: ["AI assistants", "Workflow automation", "Integrations"],
   },
   {
     num: "02",
     kind: "GROW",
-    title: "Search Engine Optimization",
-    body: "Get to the top of the results page and stay there, with technical SEO that holds up long after launch.",
-    tags: ["Technical", "On-page", "Local"],
+    title: "Digital Marketing",
+    body: "Reach your audience with coordinated content, social media, email and paid campaigns. We plan, manage and measure activity against your business goals.",
+    tags: ["Social media", "Paid campaigns", "Content & email"],
   },
   {
     num: "03",
     kind: "GROW",
-    title: "Content Creation",
-    body: "Words, images, and video that give your brand something worth saying — and a reason for people to come back.",
-    tags: ["Editorial", "Video", "Brand"],
+    title: "Search Engine Optimization",
+    body: "Help customers find your business through technical improvements, relevant content and local search. We review your site, prioritise fixes and track progress.",
+    tags: ["Technical SEO", "On-page SEO", "Local search"],
   },
   {
     num: "04",
-    kind: "GROW",
-    title: "Social Media Marketing",
-    body: "Show up where your customers already are, with a presence that earns attention instead of buying it.",
-    tags: ["Strategy", "Community", "Reporting"],
+    kind: "BUILD",
+    title: "Web Design & Development",
+    body: "Create a professional website that makes your business easy to understand and contact. We handle responsive design, development, performance and integration with your business tools.",
+    tags: ["Website design", "Web development", "Responsive experiences"],
   },
   {
     num: "05",
-    kind: "GROW",
-    title: "Email Marketing",
-    body: "Stay in touch with the people who already chose you. Lifecycle campaigns that drive repeat revenue, not unsubscribes.",
-    tags: ["Lifecycle", "Automation", "CRM"],
+    kind: "OPERATE",
+    title: "ERPNext & Frappe",
+    body: "Bring finance, inventory, sales and operations into one system. We help with ERPNext implementation, Frappe customisation, data migration and team training.",
+    tags: ["ERP implementation", "Frappe development", "Migration & support"],
   },
   {
     num: "06",
-    kind: "GROW",
-    title: "Pay-Per-Click Advertising",
-    body: "Stop paying for clicks that go nowhere. We build and manage campaigns that reach the people actually ready to buy.",
-    tags: ["Search", "Paid social", "Analytics"],
+    kind: "AUTOMATE",
+    title: "AI Voice Agents for Business",
+    body: "Handle incoming calls, answer common questions and book appointments with an AI voice agent built around your business. Capture enquiry details, connect them to your CRM and transfer calls to your team when needed.",
+    tags: ["Call handling", "Appointment booking", "CRM integration"],
   },
 ];
 
@@ -86,112 +87,66 @@ export type TechCard = { title: string; body: string; rows: [string, string][] }
 
 export const technology: TechCard[] = [
   {
-    title: "Web & Backend",
-    body: "Scalable, secure platforms with the boring parts done properly.",
-    rows: [
-      ["Languages", "Java · JavaScript · Python"],
-      ["Frameworks", "Spring Boot · Node.js · Django"],
-      ["Databases", "PostgreSQL · MongoDB · MySQL"],
-      ["APIs", "REST · GraphQL"],
-    ],
+    title: "Less manual work. Faster follow-through.",
+    body: "Repeated data entry and disconnected workflows slow teams down. We connect your tools and automate routine steps, with human review where decisions need it.",
+    rows: [["Solution", "AI assistants, document processing and workflow automation"], ["Technology", "Python · AI APIs · Webhooks"], ["Measure", "Processing time, manual handoffs and exceptions"]],
   },
   {
-    title: "Mobile",
-    body: "Cross-platform apps that feel native on both Android and iOS.",
-    rows: [
-      ["Frameworks", "React Native · Flutter"],
-      ["Native", "Kotlin · Swift"],
-      ["Tooling", "Expo · Fastlane · Firebase"],
-      ["Release", "Play Store · App Store"],
-    ],
+    title: "One view of your operations.",
+    body: "When sales, stock and finance sit in separate systems, teams work with incomplete information. We bring these workflows together around shared business data.",
+    rows: [["Solution", "Connected ERP workflows and operational reporting"], ["Technology", "ERPNext · Frappe · Custom integrations"], ["Measure", "Duplicate entries, reporting time and stock accuracy"]],
   },
   {
-    title: "Frontend",
-    body: "Interfaces that stay quick on real devices and real connections.",
-    rows: [
-      ["Libraries", "React · Vue · Angular"],
-      ["Meta-frameworks", "Next.js · Nuxt"],
-      ["Styling", "Tailwind · SCSS"],
-      ["Quality", "Core Web Vitals · a11y"],
-    ],
+    title: "A clearer path from visit to enquiry.",
+    body: "A website needs to help visitors find answers and take the next step. We improve page structure, performance and enquiry flows, then measure where people drop off.",
+    rows: [["Solution", "Conversion-focused websites and customer portals"], ["Technology", "Next.js · React · APIs"], ["Measure", "Page speed, form completion and qualified enquiries"]],
   },
   {
-    title: "Cloud & Infrastructure",
-    body: "Deployments you can reason about, and roll back without drama.",
-    rows: [
-      ["Providers", "AWS · Google Cloud · Azure"],
-      ["Orchestration", "Kubernetes · Docker"],
-      ["Pipelines", "CI/CD · GitHub Actions"],
-      ["IaC", "Terraform · Nginx"],
-    ],
+    title: "Marketing connected to sales.",
+    body: "Traffic alone does not explain which activity brings useful leads. We connect search, campaign reporting and CRM data so your team can make better budget decisions.",
+    rows: [["Solution", "Search visibility, campaign tracking and lead follow-up"], ["Technology", "Technical SEO · Analytics · CRM integrations"], ["Measure", "Qualified leads, acquisition cost and follow-up time"]],
   },
-  {
-    title: "AI & Machine Learning",
-    body: "Models put to work on real problems, not bolted on for the press release.",
-    rows: [
-      ["Frameworks", "TensorFlow · PyTorch"],
-      ["APIs", "Anthropic · OpenAI"],
-      ["Applied", "Computer Vision · NLP"],
-      ["Serving", "Vector search · RAG"],
-    ],
-  },
-  {
-    title: "Business Systems",
-    body: "The CRM and ERP layer that keeps operations, sales, and finance in step.",
-    rows: [
-      ["ERP", "Inventory · Finance · HR"],
-      ["CRM", "Pipeline · Support · Billing"],
-      ["Integration", "Webhooks · SSO · ETL"],
-      ["Reporting", "Dashboards · Exports"],
-    ],
-  },
-];
-
-/* PLACEHOLDER: percentages are illustrative — set from real team capability */
-export const capability: { title: string; bars: [string, number][] }[] = [
-  { title: "Frontend depth", bars: [["React", 95], ["Vue.js", 85], ["Angular", 80]] },
-  { title: "Backend depth", bars: [["Node.js", 90], ["Python", 88], ["Java", 85]] },
 ];
 
 export const process = [
   {
-    title: "Discovery",
-    body: "We work out what you actually need — the requirements, the constraints, and the outcome you are measuring against.",
-    meta: "Week 1 · Scope & fixed quote",
+    title: "Find the opportunity",
+    body: "We review your workflow, customer journey and costs to identify where a change could create the most value.",
+    meta: "A clear scope, baseline and success measures",
   },
   {
-    title: "Design",
-    body: "Wireframes, user flows, and interface design — reviewed with you before a single line of production code gets written.",
-    meta: "Weeks 2–3 · Prototype you can click",
+    title: "Design the right solution",
+    body: "We map the experience and test a prototype with you. Priorities are agreed against expected value, effort and budget.",
+    meta: "An approved prototype and delivery plan",
   },
   {
-    title: "Development",
-    body: "We build in short cycles with working software at the end of each one, so progress is visible rather than promised.",
-    meta: "Weeks 3–6 · Weekly demos",
+    title: "Build, test and launch",
+    body: "We deliver in focused stages, share working demos and test with your team before bringing the solution into daily use.",
+    meta: "A tested release, integrations and team handover",
   },
   {
-    title: "Deploy",
-    body: "Testing, launch, and the support that follows. We stay on after go-live, because that is when the real feedback arrives.",
-    meta: "Week 6 onward · Monitoring & support",
+    title: "Measure and improve",
+    body: "We compare results with the starting baseline, review ongoing costs and use the findings to prioritise the next improvement.",
+    meta: "A performance review and next-step priorities",
   },
 ] as const;
 
 export const industries = [
   {
     title: "FinTech",
-    body: "Payment processing, banking apps, and trading platforms — built to the compliance bar from day one.",
+    body: "Payment flows, financial dashboards and tools for managing transactions.",
   },
   {
     title: "Healthcare",
-    body: "Patient management, telemedicine, and health analytics, with privacy handled as a requirement rather than a feature.",
+    body: "Appointment booking, patient management and telemedicine applications.",
   },
   {
     title: "E-commerce",
-    body: "Storefronts, inventory, and analytics that stay fast on the days that matter most.",
+    body: "Online stores with product catalogues, checkout and inventory management.",
   },
   {
     title: "Education",
-    body: "Learning platforms, student management, and LMS builds designed for people who are not power users.",
+    body: "Course platforms and tools for managing students, lessons and assessments.",
   },
 ] as const;
 
@@ -236,11 +191,11 @@ export const internship = {
   points: [
     {
       title: "Hands-on, project-based learning",
-      body: "You apply what you learn on real builds and task-based sprints, not exercises invented for a classroom.",
+      body: "Practise through project tasks, with time to build, review and improve your work.",
     },
     {
       title: "Mentorship that continues",
-      body: "Mentors stay with you through both stages — learning and training — with personal feedback and career advice throughout.",
+      body: "Get feedback on your work and guidance as you move from learning to project training.",
     },
     {
       title: "Certified and recognised",
@@ -248,7 +203,7 @@ export const internship = {
     },
     {
       title: "Career support you can use",
-      body: "Resume review and LinkedIn profile work, so you are positioned properly when the opportunities show up.",
+      body: "Help with your resume and LinkedIn profile as you prepare to apply for roles.",
     },
   ],
   roles: [
@@ -259,9 +214,9 @@ export const internship = {
 } as const;
 
 export const cta = {
-  eyebrow: "Let us meet",
+  eyebrow: "Have a project in mind?",
   title: "Tell us what you are building.",
-  body: "We are always glad to meet new people and hear about new projects. Book a slot and we will come back with a quote in minutes, not weeks.",
+  body: "Tell us what you need and where you are in the process. We can talk through the scope, timing and next steps.",
   note: "Free consultation · Development & design · Technical support",
 } as const;
 
@@ -274,14 +229,12 @@ export const footerCols = [
       { label: "Technology", href: "#technology" },
       { label: "Process", href: "#process" },
       { label: "Internship", href: "#internship" },
-      { label: "Book a call", href: "#contact" },
+      { label: "Book a call", href: `mailto:${site.email}` },
     ],
   },
   { title: "Careers", links: internship.roles.map((r) => ({ label: r.title, href: r.href })) },
 ];
 
 export const social = [
-  { label: "Instagram", href: site.url },
   { label: "LinkedIn", href: site.url },
-  { label: "GitHub", href: site.url },
 ];
