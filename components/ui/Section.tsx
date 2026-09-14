@@ -18,7 +18,7 @@ export default function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className={`py-[clamp(60px,8vw,104px)] ${tones[tone]} ${className}`}>
+    <section id={id} className={`py-[clamp(46px,8vw,104px)] ${tones[tone]} ${className}`}>
       <div className="mx-auto w-full max-w-[1180px] px-[clamp(20px,5vw,48px)]">{children}</div>
     </section>
   );

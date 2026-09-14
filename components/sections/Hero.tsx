@@ -9,7 +9,7 @@ const HiveCanvas = dynamic(() => import("@/components/three/HiveCanvas"), { ssr:
 
 export default function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-screen pt-[clamp(52px,8vw,96px)] pb-[clamp(60px,8vw,104px)]">
+    <section className="relative isolate overflow-hidden bg-screen pt-[clamp(40px,8vw,96px)] pb-[clamp(48px,8vw,104px)]">
       <div className="pointer-events-none absolute inset-0">
         <HiveCanvas />
       </div>
@@ -24,13 +24,13 @@ export default function Hero() {
         <div className="max-w-[42rem]">
           <p className="mb-6 text-sm font-medium text-screen-ink-2">{hero.eyebrow}</p>
 
-          <h1 className="mb-5 text-[clamp(36px,4.8vw,60px)] tracking-[-.035em] text-screen-ink">
+          <h1 className="mb-5 text-[clamp(29px,6.8vw,60px)] tracking-[-.035em] text-screen-ink">
             {hero.headlineLead}{" "}
             <em className="brand-text block not-italic">{hero.headlineBrand}</em>{" "}
             {hero.headlineTail}
           </h1>
 
-          <p className="mb-[30px] max-w-[52ch] text-[clamp(17px,1.6vw,19.5px)] text-screen-ink-2">
+          <p className="mb-[30px] max-w-[52ch] text-[clamp(15.5px,1.6vw,19.5px)] text-screen-ink-2">
             {hero.lead}
           </p>
 

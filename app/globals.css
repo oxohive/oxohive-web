@@ -125,7 +125,8 @@
   }
 }
 
-.compact-section { padding-block: clamp(44px, 5vw, 64px); scroll-margin-top: 80px; }
+.compact-section { padding-block: clamp(36px, 5vw, 64px); scroll-margin-top: 72px; }
+@media (min-width: 768px) { .compact-section { scroll-margin-top: 88px; } }
 .service-card {
   position: relative;
   overflow: hidden;
@@ -200,8 +201,18 @@
   z-index: -1;
   pointer-events: none;
 }
+@media (max-width: 767px) {
+  .process-container .process-wave-canvas { inset: -20px -6%; width: 112%; height: calc(100% + 40px); opacity: .75; }
+}
 .process-step {
   background: rgb(255 255 255 / 92%);
   box-shadow: 0 8px 28px #14295008;
 }
 .roi-panel { background: linear-gradient(115deg, #edf7ff, #f3edff 55%, #fff0f4); }
+
+/* Mobile: keep tap targets comfortable and stop any accidental sideways scroll. */
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .service-card, .industry-card { border-radius: 14px; }
+}
+html, body { max-width: 100%; }

@@ -17,8 +17,8 @@ export default function Process() {
       />
       <ol className="m-0 grid list-none grid-cols-1 gap-4 p-0 md:grid-cols-2 xl:grid-cols-4">
         {process.map((step, i) => (
-          <li key={step.title} className="process-step flex flex-col rounded-2xl border border-line bg-ground p-6">
-            <h3 className="mb-3 md:min-h-[3.75rem] text-[22px] font-bold leading-snug text-ink">{step.title}</h3>
+          <li key={step.title} className="process-step flex flex-col rounded-2xl border border-line bg-ground p-5 sm:p-6">
+            <h3 className="mb-3 md:min-h-[3.75rem] text-[clamp(19px,4.6vw,22px)] font-bold leading-snug text-ink">{step.title}</h3>
             <p className="mb-6 text-base leading-relaxed text-ink-2">{step.body}</p>
             <div className="mt-auto border-t border-line pt-4">
               <p className="mb-1 text-xs font-bold uppercase tracking-[.08em]" style={{ color: accents[i] }}>What you get</p>
@@ -27,10 +27,10 @@ export default function Process() {
           </li>
         ))}
       </ol>
-      <div className="roi-panel mt-6 grid gap-7 rounded-2xl border border-line p-6 md:p-8 lg:grid-cols-[1fr_1.2fr]">
+      <div className="roi-panel mt-6 grid gap-6 rounded-2xl border border-line p-5 sm:p-6 md:gap-7 md:p-8 lg:grid-cols-[1fr_1.2fr]">
         <div>
           <p className="mb-3 text-sm font-bold uppercase tracking-[.08em] text-honey-ink">Return on investment</p>
-          <h3 className="mb-3 text-[28px] font-bold leading-tight text-ink">Define the value.<br />Then measure it.</h3>
+          <h3 className="mb-3 text-[clamp(22px,5.4vw,28px)] font-bold leading-tight text-ink">Define the value.<br />Then measure it.</h3>
           <p className="mb-5 max-w-[45ch] text-base leading-relaxed text-ink-2">We agree on the measures relevant to your project before work begins. Returns are assessed against implementation and ongoing costs.</p>
           <Button href={`mailto:${site.email}`}>Discuss your project</Button>
         </div>

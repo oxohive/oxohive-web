@@ -10,7 +10,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-60 border-b border-line bg-ground/[.88] backdrop-blur-[14px] backdrop-saturate-150">
-      <div className="mx-auto flex h-[80px] w-full max-w-[1180px] items-center gap-6 px-[clamp(20px,5vw,48px)]">
+      <div className="mx-auto flex h-[64px] w-full md:h-[80px] max-w-[1180px] items-center gap-3 px-[clamp(20px,5vw,48px)]">
         <a href={site.url} className="flex shrink-0 items-center gap-2.5 no-underline">
           <Image
             src="/Oxohive_logo.webp"
@@ -19,7 +19,7 @@ export default function Header() {
             height={970}
             unoptimized
             loading="eager"
-            className="h-[72px] w-[104px] object-contain"
+            className="h-[52px] w-[76px] object-contain md:h-[72px] md:w-[104px]"
           />
         </a>
 
@@ -39,7 +39,7 @@ export default function Header() {
           className={[
             "gap-1 md:ml-auto md:flex md:items-center md:static md:flex-row md:border-0 md:bg-transparent md:p-0",
             open
-              ? "absolute inset-x-0 top-[80px] flex flex-col items-stretch border-b border-line bg-ground px-[clamp(20px,5vw,48px)] pt-3.5 pb-5"
+              ? "absolute inset-x-0 top-[64px] md:top-[80px] flex flex-col items-stretch border-b border-line bg-ground px-[clamp(20px,5vw,48px)] pt-3.5 pb-5"
               : "hidden",
           ].join(" ")}
         >
@@ -52,6 +52,12 @@ export default function Header() {
               {n.label}
             </a>
           ))}
+
+          <span className="mt-3 md:hidden">
+            <Button href={`mailto:${site.email}`} arrow full>
+              Book a call
+            </Button>
+          </span>
         </nav>
 
         <span className="ml-1.5 hidden md:inline-flex">

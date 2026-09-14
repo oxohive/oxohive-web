@@ -17,7 +17,7 @@ export default function Industries() {
       <div className="grid grid-cols-1 gap-[18px] sm:grid-cols-2 lg:grid-cols-4">
         {industries.map((ind, i) => (
           <Reveal key={ind.title} delay={i * 0.05}>
-            <article className="industry-card h-full rounded-[14px] border p-[22px]">
+            <article className="industry-card h-full rounded-[14px] border p-5 sm:p-[22px]">
               <h3 className="mb-2 text-[19px] font-bold">{ind.title}</h3>
               <p className="text-[15px] leading-relaxed text-ink-2">{ind.body}</p>
             </article>

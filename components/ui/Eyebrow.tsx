@@ -9,7 +9,7 @@ export default function Eyebrow({
   return (
     <p
       className={[
-        "m-0 inline-flex items-center font-body text-black text-[clamp(20px,2vw,26px)] font-bold tracking-[-.015em]",
+        "m-0 inline-flex items-center font-body text-black text-[clamp(16px,4.2vw,26px)] font-bold tracking-[-.015em]",
         center ? "justify-center" : "",
       ]
         .filter(Boolean)

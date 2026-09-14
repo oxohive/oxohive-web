@@ -15,8 +15,8 @@ export default function Technology() {
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
         {technology.map((t, i) => (
           <Reveal key={t.title} delay={i * 0.05}>
-            <article className="h-full rounded-2xl border border-screen-line bg-screen-2 p-6 md:p-7">
-              <h3 className="mb-3 text-[22px] font-bold leading-snug text-ink">{t.title}</h3>
+            <article className="h-full rounded-2xl border border-screen-line bg-screen-2 p-5 sm:p-6 md:p-7">
+              <h3 className="mb-3 text-[clamp(19px,4.6vw,22px)] font-bold leading-snug text-ink">{t.title}</h3>
               <p className="mb-6 text-base leading-relaxed text-ink-2">{t.body}</p>
               <dl className="m-0 grid gap-4 border-t border-line pt-5">
                 {t.rows.map(([label, value]) => (

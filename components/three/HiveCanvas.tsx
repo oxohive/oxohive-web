@@ -40,7 +40,7 @@ export default function HiveCanvas() {
   return (
     <div ref={host} style={{ position: "absolute", inset: 0 }} aria-hidden="true">
       <Canvas
-        dpr={[1, 1.75]}
+        dpr={[1, typeof window !== "undefined" && window.innerWidth < 768 ? 1.25 : 1.75]}
         gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
         camera={{ position: [0, 6.5, 9], fov: 42 }}
       >

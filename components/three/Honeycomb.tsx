@@ -41,7 +41,12 @@ export default function Honeycomb({
   pointer: React.MutableRefObject<{ x: number; y: number }>;
 }) {
   const mesh = useRef<THREE.InstancedMesh>(null);
-  const cells = useMemo(() => buildCells(HEX.rings), []);
+  // phones render a smaller grid — same composition, a fraction of the instances
+  const rings = useMemo(
+    () => (typeof window !== "undefined" && window.innerWidth < 768 ? 6 : HEX.rings),
+    []
+  );
+  const cells = useMemo(() => buildCells(rings), [rings]);
   const dummy = useMemo(() => new THREE.Object3D(), []);
   const color = useMemo(() => new THREE.Color(), []);
 
