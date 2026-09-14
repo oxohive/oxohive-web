@@ -1,59 +1,39 @@
 @import "tailwindcss";
 
-/* ============================================================
-   OXOHIVE — theme tokens
-   Light = the hive by day   (cream ground, black screen)
-   Dark  = the hive at night (espresso ground, same screen)
-   Screen tokens never change. That is the whole idea.
-   ============================================================ */
-:root{
-  --ground:#F3EBDF;
-  --ground-2:#EAE0D1;
-  --ground-3:#E2D5C2;
-  --ink:#1D1814;
-  --ink-2:#5B5047;
-  --ink-3:#8A7C6E;
-  --line:#DCCFBC;
-  --line-2:#CDBCA4;
-
-  /* the laptop — identical in both themes */
-  --screen:#13161B;
-  --screen-2:#1A1F27;
-  --screen-3:#222834;
-  --screen-line:#2C333F;
-  --screen-ink:#E6EBF1;
-  --screen-ink-2:#94A3B4;
-
-  --honey:#E5A445;
-  --honey-ink:#9A6410;
-  --oak:#C6A079;
-  --daylight:#CFDDE4;
-
-  /* editor syntax — dark panels only */
-  --sx-key:#BB9AF7;
-  --sx-str:#9ECE6A;
-  --sx-fn:#7AA2F7;
-  --sx-num:#E0AF68;
-  --sx-com:#5E6C7E;
-  --sx-cyan:#7DCFFF;
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --ground:#171310; --ground-2:#1F1A16; --ground-3:#26201A;
-    --ink:#F2E9DC; --ink-2:#BCAC9A; --ink-3:#8E7F70;
-    --line:#332B24; --line-2:#453A31;
-    --honey-ink:#E5A445; --oak:#A8825C;
-  }
-}
-:root[data-theme="dark"]{
-  --ground:#171310; --ground-2:#1F1A16; --ground-3:#26201A;
-  --ink:#F2E9DC; --ink-2:#BCAC9A; --ink-3:#8E7F70;
-  --line:#332B24; --line-2:#453A31;
-  --honey-ink:#E5A445; --oak:#A8825C;
+/* White surfaces with accessible accents from the brand palette. */
+:root {
+  color-scheme: light;
+  --ground:#ffffff;
+  --ground-2:#f7f8fc;
+  --ground-3:#edf0f8;
+  --ink:#121625;
+  --ink-2:#354158;
+  --ink-3:#4d5a72;
+  --line:#e1e5ef;
+  --line-2:#c0c9dc;
+  --screen:#ffffff;
+  --screen-2:#f7f8fc;
+  --screen-3:#edf0f8;
+  --screen-line:#dce2ef;
+  --screen-ink:#121625;
+  --screen-ink-2:#354158;
+  --brand-cyan:#00d9f5;
+  --brand-blue:#075bff;
+  --brand-violet:#8138ff;
+  --brand-pink:#ff3298;
+  --brand-orange:#ffad58;
+  --honey:#075bdb;
+  --honey-ink:#075bdb;
+  --oak:#7136d0;
+  --daylight:#c5ddff;
+  --sx-key:#7136b8;
+  --sx-str:#367027;
+  --sx-fn:#2758ba;
+  --sx-num:#a64715;
+  --sx-com:#606c82;
+  --sx-cyan:#076480;
 }
 
-/* map tokens into Tailwind utilities — `inline` keeps the var() live,
-   so bg-ground / text-ink follow the theme at runtime */
 @theme inline {
   --color-ground:      var(--ground);
   --color-ground-2:    var(--ground-2);
@@ -83,8 +63,8 @@
   --color-sx-com:      var(--sx-com);
   --color-sx-cyan:     var(--sx-cyan);
 
-  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
-  --font-body:    var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-body:    var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   --font-mono:    var(--font-jetbrains), ui-monospace, monospace;
 }
 
@@ -92,15 +72,15 @@
   body{
     background:var(--ground);
     color:var(--ink);
-    font-family:var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+    font-family:var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
     font-size:17px;
     line-height:1.65;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
   h1,h2,h3,h4{
-    font-family:var(--font-bricolage), ui-sans-serif, sans-serif;
-    font-weight:600;line-height:1.08;letter-spacing:-.022em;
+    font-family:var(--font-manrope), ui-sans-serif, sans-serif;
+    font-weight:600;line-height:1.16;letter-spacing:-.025em;
     text-wrap:balance;
   }
   :focus-visible{outline:2.5px solid var(--honey);outline-offset:3px;border-radius:4px}
@@ -114,3 +94,125 @@
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
+
+.brand-content { position: relative; z-index: 1; }
+.brand-text {
+  color: #075bdb;
+  background: linear-gradient(100deg, #075bdb, #7136c8 45%, #b51c78 75%, #b74c17);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.brand-button {
+  color: #fff;
+  border-color: #6882ff;
+  background: linear-gradient(110deg, #0753cd, #6430c9 65%, #a41a69);
+  box-shadow: 0 4px 24px #075bff24;
+}
+.brand-button:hover {
+  border-color: #61e5ff;
+  box-shadow: 0 4px 30px #8138ff55;
+}
+::selection { background: #8138ff; color: white; }
+
+/* Protect the copy while leaving the animation unobscured on the right. */
+.hero-scrim {
+  background: linear-gradient(90deg, #fff 0%, #ffffffed 32%, #ffffffb3 49%, #ffffff26 64%, transparent 78%);
+}
+@media (max-width: 767px) {
+  .hero-scrim {
+    background: linear-gradient(90deg, #fffffff2 0%, #ffffffd9 55%, #ffffff40 100%);
+  }
+}
+
+.compact-section { padding-block: clamp(36px, 5vw, 64px); scroll-margin-top: 72px; }
+@media (min-width: 768px) { .compact-section { scroll-margin-top: 88px; } }
+.service-card {
+  position: relative;
+  overflow: hidden;
+  border-color: var(--line);
+  background: white;
+  transition: box-shadow 220ms ease, transform 220ms ease, border-color 220ms ease;
+}
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, #ffffff00 35%, #ffffffe6 50%, #ffffff00 65%);
+  opacity: 0;
+  transform: translateX(-120%);
+  pointer-events: none;
+}
+@media (hover: hover) {
+  .service-card:hover {
+    border-color: transparent;
+    background: linear-gradient(white, white) padding-box,
+      linear-gradient(120deg, #00d5ed, #0866ff 28%, #7138ff 52%, #f52c9c 78%, #ffb45e) border-box;
+    box-shadow: -10px 6px 32px #0866ff2e, 10px 8px 34px #f52c9c2e, 0 2px 10px #7138ff1f;
+    transform: translateY(-5px);
+  }
+  .service-card:hover::after {
+    opacity: 1;
+    transform: translateX(120%);
+    transition: transform 720ms ease, opacity 240ms ease;
+  }
+}
+
+/* Glossy brand hover for the industry cards. */
+.industry-card {
+  position: relative;
+  overflow: hidden;
+  border-color: var(--line);
+  background: white;
+  transition: box-shadow 240ms ease, transform 240ms ease, border-color 240ms ease;
+}
+.industry-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, #ffffff00 35%, #ffffffe6 50%, #ffffff00 65%);
+  opacity: 0;
+  transform: translateX(-120%);
+  pointer-events: none;
+}
+@media (hover: hover) {
+  .industry-card:hover {
+    border-color: transparent;
+    background: linear-gradient(white, white) padding-box,
+      linear-gradient(120deg, #00d5ed, #0866ff 28%, #7138ff 52%, #f52c9c 78%, #ffb45e) border-box;
+    box-shadow: -10px 6px 32px #0866ff2e, 10px 8px 34px #f52c9c2e, 0 2px 10px #7138ff1f;
+    transform: translateY(-5px);
+  }
+  .industry-card:hover::after {
+    opacity: 1;
+    transform: translateX(120%);
+    transition: transform 720ms ease, opacity 240ms ease;
+  }
+}
+
+/* One continuous wave across the process container. */
+.process-container { position: relative; isolation: isolate; overflow: hidden; }
+.process-container > div { position: relative; z-index: 1; }
+.process-container .process-wave-canvas {
+  position: absolute;
+  inset: -35px -10%;
+  width: 120%;
+  height: calc(100% + 70px);
+  z-index: -1;
+  pointer-events: none;
+}
+@media (max-width: 767px) {
+  .process-container .process-wave-canvas { inset: -20px -6%; width: 112%; height: calc(100% + 40px); opacity: .75; }
+}
+.process-step {
+  background: rgb(255 255 255 / 92%);
+  box-shadow: 0 8px 28px #14295008;
+}
+.roi-panel { background: linear-gradient(115deg, #edf7ff, #f3edff 55%, #fff0f4); }
+
+/* Mobile: keep tap targets comfortable and stop any accidental sideways scroll. */
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .service-card, .industry-card { border-radius: 14px; }
+}
+html, body { max-width: 100%; }

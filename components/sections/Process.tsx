@@ -1,51 +1,51 @@
-"use client";
-
-import dynamic from "next/dynamic";
-import { process } from "@/lib/content";
+import { process, site } from "@/lib/content";
 import Section from "@/components/ui/Section";
 import SectionHead from "@/components/ui/SectionHead";
-import Reveal from "@/components/ui/Reveal";
+import ProcessWave from "@/components/ui/ProcessWave";
+import Button from "@/components/ui/Button";
 
-const SceneFrame = dynamic(() => import("@/components/three/SceneFrame"), { ssr: false });
-const Pipeline = dynamic(() => import("@/components/three/objects/Pipeline"), { ssr: false });
+const accents = ["#075bdb", "#7138ff", "#bc238c", "#b74c17"];
 
-/* A genuine sequence, so it is genuinely numbered. */
 export default function Process() {
   return (
-    <Section id="process" tone="warm">
+    <Section id="process" tone="warm" className="compact-section process-container">
+      <ProcessWave />
       <SectionHead
         eyebrow="Process"
-        title="Four stages, no surprises."
-        body="You always know what we are doing this week, and what lands next."
+        title="How we work together."
+        body="A clear plan. Visible progress. Results you can measure. We connect every stage of delivery to the value it should create for your business."
       />
-      <div className="pointer-events-none mb-4 h-[220px] w-full sm:h-[280px]">
-        <SceneFrame cameraPosition={[0, 1.4, 6.8]} fov={40}>
-          {(progress) => <Pipeline progress={progress} />}
-        </SceneFrame>
-      </div>
-
-      <div className="grid">
+      <ol className="m-0 grid list-none grid-cols-1 gap-4 p-0 md:grid-cols-2 xl:grid-cols-4">
         {process.map((step, i) => (
-          <Reveal key={step.title} delay={i * 0.05}>
-            <article
-              className={[
-                "grid grid-cols-[auto_minmax(0,1fr)] items-start gap-[22px] border-t border-line py-[26px]",
-                i === process.length - 1 ? "border-b" : "",
-              ].join(" ")}
-            >
-              <div className="grid size-[38px] shrink-0 place-items-center rounded-full border-[1.5px] border-honey font-mono text-xs font-bold tabular-nums text-honey-ink">
-                {String(i + 1).padStart(2, "0")}
-              </div>
-              <div>
-                <h3 className="mb-[7px] text-[21px]">{step.title}</h3>
-                <p className="max-w-[60ch] text-base text-ink-2">{step.body}</p>
-                <p className="mt-2.5 font-mono text-[11.5px] uppercase tracking-[.06em] text-ink-3">
-                  {step.meta}
-                </p>
-              </div>
-            </article>
-          </Reveal>
+          <li key={step.title} className="process-step flex flex-col rounded-2xl border border-line bg-ground p-5 sm:p-6">
+            <h3 className="mb-3 md:min-h-[3.75rem] text-[clamp(19px,4.6vw,22px)] font-bold leading-snug text-ink">{step.title}</h3>
+            <p className="mb-6 text-base leading-relaxed text-ink-2">{step.body}</p>
+            <div className="mt-auto border-t border-line pt-4">
+              <p className="mb-1 text-xs font-bold uppercase tracking-[.08em]" style={{ color: accents[i] }}>What you get</p>
+              <p className="text-sm font-semibold leading-relaxed text-ink">{step.meta}</p>
+            </div>
+          </li>
         ))}
+      </ol>
+      <div className="roi-panel mt-6 grid gap-6 rounded-2xl border border-line p-5 sm:p-6 md:gap-7 md:p-8 lg:grid-cols-[1fr_1.2fr]">
+        <div>
+          <p className="mb-3 text-sm font-bold uppercase tracking-[.08em] text-honey-ink">Return on investment</p>
+          <h3 className="mb-3 text-[clamp(22px,5.4vw,28px)] font-bold leading-tight text-ink">Define the value.<br />Then measure it.</h3>
+          <p className="mb-5 max-w-[45ch] text-base leading-relaxed text-ink-2">We agree on the measures relevant to your project before work begins. Returns are assessed against implementation and ongoing costs.</p>
+          <Button href={`mailto:${site.email}`}>Discuss your project</Button>
+        </div>
+        <dl className="m-0 grid gap-4 sm:grid-cols-3 lg:items-center">
+          {[
+            ["Time saved", "Hours of manual work reduced across your team."],
+            ["Revenue impact", "Qualified enquiries, conversion and repeat business."],
+            ["Cost efficiency", "Operating costs, errors and rework compared with your baseline."],
+          ].map(([title, body]) => (
+            <div key={title} className="h-full rounded-xl border border-white bg-white/85 p-5">
+              <dt className="mb-2 text-lg font-bold text-ink">{title}</dt>
+              <dd className="m-0 text-sm leading-relaxed text-ink-2">{body}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </Section>
   );

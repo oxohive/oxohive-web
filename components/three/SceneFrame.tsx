@@ -78,10 +78,10 @@ export default function SceneFrame({
           gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
         >
           <PerspectiveCamera makeDefault position={cameraPosition} fov={fov} />
-          <Environment files="/hdri/studio-warm.hdr" environmentIntensity={0.55} />
-          <ambientLight intensity={0.35} color="#F3EBDF" />
-          <directionalLight position={[-5, 7, 4]} intensity={1.7} color="#E5A445" />
-          <directionalLight position={[6, 3, 5]} intensity={0.5} color="#CFDDE4" />
+          <Environment files="/hdri/studio-warm.hdr" environmentIntensity={0.15} />
+          <ambientLight intensity={0.35} color="#FFFFFF" />
+          <directionalLight position={[-5, 7, 4]} intensity={1.2} color="#FFFFFF" />
+          <directionalLight position={[6, 3, 5]} intensity={0.5} color="#FFFFFF" />
           {children(progress)}
         </Canvas>
       )}

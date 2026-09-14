@@ -1,43 +1,28 @@
-"use client";
-
-import dynamic from "next/dynamic";
-import { technology, capability } from "@/lib/content";
+import { technology } from "@/lib/content";
 import Section from "@/components/ui/Section";
 import SectionHead from "@/components/ui/SectionHead";
 import Reveal from "@/components/ui/Reveal";
 
-const SceneFrame = dynamic(() => import("@/components/three/SceneFrame"), { ssr: false });
-const StackTower = dynamic(() => import("@/components/three/objects/StackTower"), { ssr: false });
-
 export default function Technology() {
   return (
-    <Section id="technology" tone="screen">
+    <Section id="technology" tone="screen" className="compact-section">
       <SectionHead
         onScreen
-        eyebrow="Technology"
-        title="The stack we build on."
-        body="Battle-tested tools, chosen because they hold up in production — not because they trended last quarter."
+        eyebrow="Technology with purpose"
+        title="Solve the gaps holding your business back."
+        body="Start with the problem, choose the right technology, and agree on how success will be measured. Every solution has a clear job to do."
       />
-
-      <div className="pointer-events-none mb-4 h-[320px] w-full sm:h-[400px]">
-        <SceneFrame cameraPosition={[0, 1.2, 6.6]} fov={40}>
-          {(progress) => <StackTower progress={progress} />}
-        </SceneFrame>
-      </div>
-
-      <div className="mb-[22px] grid grid-cols-1 gap-[18px] sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
         {technology.map((t, i) => (
           <Reveal key={t.title} delay={i * 0.05}>
-            <article className="h-full rounded-[14px] border border-screen-line bg-screen-2 p-[22px] pb-[26px] transition-colors duration-200 hover:border-[#3A4452]">
-              <h3 className="mb-1.5 text-[18.5px] tracking-[-.015em]">{t.title}</h3>
-              <p className="mb-[18px] text-[14.5px] leading-snug text-screen-ink-2">{t.body}</p>
-              <dl className="m-0 grid gap-3">
-                {t.rows.map(([k, v]) => (
-                  <div key={k}>
-                    <dt className="mb-1 font-mono text-[10.5px] uppercase tracking-[.1em] text-sx-com">
-                      {k}
-                    </dt>
-                    <dd className="m-0 font-mono text-[13px] leading-snug text-sx-cyan">{v}</dd>
+            <article className="h-full rounded-2xl border border-screen-line bg-screen-2 p-5 sm:p-6 md:p-7">
+              <h3 className="mb-3 text-[clamp(19px,4.6vw,22px)] font-bold leading-snug text-ink">{t.title}</h3>
+              <p className="mb-6 text-base leading-relaxed text-ink-2">{t.body}</p>
+              <dl className="m-0 grid gap-4 border-t border-line pt-5">
+                {t.rows.map(([label, value]) => (
+                  <div key={label} className="grid gap-1 sm:grid-cols-[100px_1fr] sm:gap-4">
+                    <dt className="text-sm font-bold text-honey-ink">{label}</dt>
+                    <dd className="m-0 text-[15px] leading-relaxed text-ink">{value}</dd>
                   </div>
                 ))}
               </dl>
@@ -45,34 +30,6 @@ export default function Technology() {
           </Reveal>
         ))}
       </div>
-
-      <Reveal>
-        <div className="rounded-[14px] border border-screen-line bg-screen-2 px-[26px] py-7">
-          <div className="grid grid-cols-1 gap-[26px] md:grid-cols-2">
-            {capability.map((group) => (
-              <div key={group.title}>
-                <h3 className="mb-[18px] font-mono text-[15px] font-medium uppercase tracking-[.08em] text-screen-ink-2">
-                  {group.title}
-                </h3>
-                {group.bars.map(([name, val]) => (
-                  <div key={name} className="mb-[15px]">
-                    <div className="mb-[7px] flex items-baseline justify-between">
-                      <span className="text-[14.5px] font-medium">{name}</span>
-                      <span className="font-mono text-[12.5px] tabular-nums text-sx-num">{val}%</span>
-                    </div>
-                    <div className="h-[5px] overflow-hidden rounded-full bg-screen-3">
-                      <div
-                        className="h-full rounded-full bg-gradient-to-r from-honey to-sx-cyan"
-                        style={{ width: `${val}%` }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
-      </Reveal>
     </Section>
   );
 }
